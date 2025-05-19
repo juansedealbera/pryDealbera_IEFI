@@ -33,11 +33,11 @@
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStripMenu = new System.Windows.Forms.StatusStrip();
             this.slblUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.slblFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.statusStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,52 +71,52 @@
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
             this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
-            // statusStrip1
+            // statusStripMenu
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.slblUser,
             this.slblFecha});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 341);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(536, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripMenu.Location = new System.Drawing.Point(0, 341);
+            this.statusStripMenu.Name = "statusStripMenu";
+            this.statusStripMenu.Size = new System.Drawing.Size(536, 22);
+            this.statusStripMenu.TabIndex = 1;
+            this.statusStripMenu.Text = "statusStrip1";
             // 
             // slblUser
             // 
             this.slblUser.Name = "slblUser";
             this.slblUser.Size = new System.Drawing.Size(33, 17);
             this.slblUser.Text = "User:";
-            this.slblUser.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // slblFecha
             // 
             this.slblFecha.Name = "slblFecha";
             this.slblFecha.Size = new System.Drawing.Size(41, 17);
             this.slblFecha.Text = "Fecha:";
-            this.slblFecha.Click += new System.EventHandler(this.toolStripStatusLabel1_Click_1);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 363);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStripMenu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "Menú Principal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStripMenu.ResumeLayout(false);
+            this.statusStripMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripMenu;
         private System.Windows.Forms.ToolStripStatusLabel slblUser;
         private System.Windows.Forms.ToolStripStatusLabel slblFecha;
     }

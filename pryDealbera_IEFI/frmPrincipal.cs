@@ -17,14 +17,16 @@ namespace pryDealbera_IEFI
             InitializeComponent();
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmGestionUsuario x = new frmGestionUsuario();
+            x.ShowDialog();
         }
 
-        private void toolStripStatusLabel1_Click_1(object sender, EventArgs e)
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAuditoria x = new frmAuditoria();
+            x.ShowDialog();
         }
     }
 }
