@@ -63,6 +63,36 @@ namespace pryDealbera_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_circle_create_expand_new_plus_icon_123218 {
+            get {
+                object obj = ResourceManager.GetObject("add_circle_create_expand_new_plus_icon_123218", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editredo_104349 {
+            get {
+                object obj = ResourceManager.GetObject("editredo_104349", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap enter_icon_icons_com_71207 {
+            get {
+                object obj = ResourceManager.GetObject("enter_icon-icons.com_71207", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap invisible {
             get {
                 object obj = ResourceManager.GetObject("invisible", resourceCulture);
@@ -76,6 +106,26 @@ namespace pryDealbera_IEFI.Properties {
         internal static System.Drawing.Bitmap invisible1 {
             get {
                 object obj = ResourceManager.GetObject("invisible1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loupe_78956 {
+            get {
+                object obj = ResourceManager.GetObject("loupe_78956", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ojo {
+            get {
+                object obj = ResourceManager.GetObject("ojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

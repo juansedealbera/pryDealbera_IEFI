@@ -126,5 +126,20 @@
   <ItemGroup>
     <None Include="Resources\invisible1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_icon-icons.com_71207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_78956.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_circle_create_expand_new_plus_icon_123218.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editredo_104349.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEntrar = new MaterialSkin.Controls.MaterialButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnVerContraseña = new MaterialSkin.Controls.MaterialButton();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.btnVerContraseña = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEntrar = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,25 +60,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Member Login";
             // 
-            // btnEntrar
-            // 
-            this.btnEntrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEntrar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnEntrar.Depth = 0;
-            this.btnEntrar.HighEmphasis = true;
-            this.btnEntrar.Icon = null;
-            this.btnEntrar.Location = new System.Drawing.Point(97, 255);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnEntrar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEntrar.Size = new System.Drawing.Size(158, 36);
-            this.btnEntrar.TabIndex = 13;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnEntrar.UseAccentColor = false;
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -97,16 +78,13 @@
             this.txtPass.Size = new System.Drawing.Size(158, 29);
             this.txtPass.TabIndex = 16;
             // 
-            // pictureBox1
+            // txtUser
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(117, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 83);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.txtUser.Location = new System.Drawing.Point(97, 145);
+            this.txtUser.Multiline = true;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(158, 29);
+            this.txtUser.TabIndex = 19;
             // 
             // btnVerContraseña
             // 
@@ -116,7 +94,7 @@
             this.btnVerContraseña.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnVerContraseña.Depth = 0;
             this.btnVerContraseña.HighEmphasis = true;
-            this.btnVerContraseña.Icon = global::pryDealbera_IEFI.Properties.Resources.invisible1;
+            this.btnVerContraseña.Icon = global::pryDealbera_IEFI.Properties.Resources.ojo;
             this.btnVerContraseña.Image = global::pryDealbera_IEFI.Properties.Resources.invisible1;
             this.btnVerContraseña.Location = new System.Drawing.Point(262, 194);
             this.btnVerContraseña.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -129,26 +107,52 @@
             this.btnVerContraseña.UseAccentColor = false;
             this.btnVerContraseña.UseVisualStyleBackColor = true;
             // 
-            // txtUser
+            // pictureBox1
             // 
-            this.txtUser.Location = new System.Drawing.Point(97, 145);
-            this.txtUser.Multiline = true;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(158, 29);
-            this.txtUser.TabIndex = 19;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(117, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.AutoSize = false;
+            this.btnEntrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEntrar.BackgroundImage = global::pryDealbera_IEFI.Properties.Resources.invisible1;
+            this.btnEntrar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnEntrar.Depth = 0;
+            this.btnEntrar.HighEmphasis = true;
+            this.btnEntrar.Icon = global::pryDealbera_IEFI.Properties.Resources.enter_icon_icons_com_71207;
+            this.btnEntrar.Image = global::pryDealbera_IEFI.Properties.Resources.invisible1;
+            this.btnEntrar.Location = new System.Drawing.Point(107, 248);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEntrar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnEntrar.Size = new System.Drawing.Size(118, 41);
+            this.btnEntrar.TabIndex = 20;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnEntrar.UseAccentColor = false;
+            this.btnEntrar.UseVisualStyleBackColor = true;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(331, 314);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnVerContraseña);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -164,11 +168,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialButton btnEntrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton btnVerContraseña;
         private System.Windows.Forms.TextBox txtUser;
+        private MaterialSkin.Controls.MaterialButton btnEntrar;
     }
 }
