@@ -28,5 +28,10 @@ namespace pryDealbera_IEFI
             frmAuditoria x = new frmAuditoria();
             x.ShowDialog();
         }
+
+        private void statusStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

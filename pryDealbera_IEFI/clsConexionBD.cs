@@ -81,7 +81,7 @@ namespace pryDealbera_IEFI
                     SqlCommand comando = new SqlCommand(query, conexion);
 
                     comando.Parameters.AddWithValue("@nombre", usuario.nombre);
-                    comando.Parameters.AddWithValue("@descripcion", usuario.descripcion);
+                    comando.Parameters.AddWithValue("@", usuario.descripcion);
                     comando.Parameters.AddWithValue("@precio", usuario.precio);
                     comando.Parameters.AddWithValue("@stock", usuario.stock);
                     comando.Parameters.AddWithValue("@categoriaId", usuario.categoria);
