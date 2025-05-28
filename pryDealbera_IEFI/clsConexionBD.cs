@@ -12,10 +12,11 @@ namespace pryDealbera_IEFI
     internal class clsConexionBD
     {
         //cadena de conexion
-        string cadenaConexion = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
-        //"Server=localhost\SQLEXPRESS;Database=Comercio;Trusted_Connection=True;"
+        string cadenaConexion = "Server=PC47;Database=Auditoria;Trusted_Connection=True;";
+        //"Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;"
         //Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
         //Server=PC50;Database=Comercio;Trusted_Connection=True;
+        private SqlConnection conexion;
 
 
         //conector
@@ -31,52 +32,49 @@ namespace pryDealbera_IEFI
         {
             try
             {
-                coneccionBaseDatos = new SqlConnection(cadenaConexion);
-
-                nombreBaseDeDatos = coneccionBaseDatos.Database;
-
-                coneccionBaseDatos.Open();
-
-                MessageBox.Show("Conectado a " + nombreBaseDeDatos);
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
+                // Puedes quitar esto si no deseas mostrar siempre
+                MessageBox.Show("Conectado a la base de datos Auditoria correctamente.");
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("Tiene un errorcito - " + error.Message);
+                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
             }
 
         }
 
-        public void ListarBD(DataGridView Grilla)
+        public void ListarBD(DataGridView grilla)
         {
             try
             {
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                using (SqlConnection conn = new SqlConnection(cadenaConexion))
                 {
-                    conexion.Open();
-                    string query = "SELECT * FROM Usuarios ORDER BY Codigo ASC";
+                    conn.Open();
+                    string query = "SELECT Id, Usuario, Correo, NumeroContacto FROM Usuarios ORDER BY Id ASC";
 
-                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlCommand comando = new SqlCommand(query, conn);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
 
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
-                    Grilla.DataSource = tabla;
+                    grilla.DataSource = tabla;
                 }
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudieron cargar los productos correctamente.", "Error de carga", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudieron cargar los usuarios correctamente: " + ex.Message);
             }
         }
 
-        /*public void Agregar(clsUsuario usuario)
+        public void Agregar(clsUsuario usuario)
         {
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @numeroContacto)";
+                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @telefono)";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 
@@ -93,11 +91,11 @@ namespace pryDealbera_IEFI
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al agregar producto: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al agregar usuario: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void Modificar(clsUsuario usuario)
+        /*public void Modificar(clsUsuario usuario)
         {
             try
             {

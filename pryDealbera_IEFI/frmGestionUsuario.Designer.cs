@@ -30,33 +30,25 @@
         {
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnBuscarNombre = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.btnEliminar1 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnBuscarNombre = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // materialMultiLineTextBox3
-            // 
-            
-            // 
-            // btnEliminar
-            // 
-            
             // 
             // dgvGrilla
             // 
@@ -88,57 +80,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresar Datos";
             // 
-            // txtUsuario
+            // label4
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(9, 44);
-            this.txtUsuario.Multiline = true;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(185, 27);
-            this.txtUsuario.TabIndex = 2;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(9, 107);
-            this.txtContraseña.Multiline = true;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(185, 27);
-            this.txtContraseña.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nombre De Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Contraseña:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(9, 163);
-            this.txtCorreo.Multiline = true;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(185, 27);
-            this.txtCorreo.TabIndex = 8;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(9, 226);
-            this.txtNumero.Multiline = true;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(185, 27);
-            this.txtNumero.TabIndex = 9;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Número de Teléfono:";
             // 
             // label3
             // 
@@ -150,58 +100,13 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Dirección de Correo:";
             // 
-            // label4
+            // txtNumero
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Número de Teléfono:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.btnBuscarNombre);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Location = new System.Drawing.Point(218, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(283, 85);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Opción de Búsqueda";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Nombre/Apellido:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 44);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 27);
-            this.textBox4.TabIndex = 2;
-            // 
-            // btnBuscarNombre
-            // 
-            this.btnBuscarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarNombre.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
-            this.btnBuscarNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarNombre.Location = new System.Drawing.Point(176, 44);
-            this.btnBuscarNombre.Name = "btnBuscarNombre";
-            this.btnBuscarNombre.Size = new System.Drawing.Size(98, 27);
-            this.btnBuscarNombre.TabIndex = 2;
-            this.btnBuscarNombre.Text = "Buscar";
-            this.btnBuscarNombre.UseVisualStyleBackColor = true;
+            this.txtNumero.Location = new System.Drawing.Point(9, 226);
+            this.txtNumero.Multiline = true;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(185, 27);
+            this.txtNumero.TabIndex = 9;
             // 
             // btnEliminar1
             // 
@@ -226,6 +131,35 @@
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(9, 163);
+            this.txtCorreo.Multiline = true;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(185, 27);
+            this.txtCorreo.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Contraseña:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nombre De Usuario:";
             // 
             // btnModificar
             // 
@@ -239,13 +173,64 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // materialLabel2
+            // txtContraseña
             // 
-            
+            this.txtContraseña.Location = new System.Drawing.Point(9, 107);
+            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(185, 27);
+            this.txtContraseña.TabIndex = 3;
             // 
-            // materialLabel3
+            // txtUsuario
             // 
-            
+            this.txtUsuario.Location = new System.Drawing.Point(9, 44);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(185, 27);
+            this.txtUsuario.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.btnBuscarNombre);
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Location = new System.Drawing.Point(218, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(283, 85);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opción de Búsqueda";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 16);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Nombre/Apellido:";
+            // 
+            // btnBuscarNombre
+            // 
+            this.btnBuscarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarNombre.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnBuscarNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarNombre.Location = new System.Drawing.Point(176, 44);
+            this.btnBuscarNombre.Name = "btnBuscarNombre";
+            this.btnBuscarNombre.Size = new System.Drawing.Size(98, 27);
+            this.btnBuscarNombre.TabIndex = 2;
+            this.btnBuscarNombre.Text = "Buscar";
+            this.btnBuscarNombre.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 44);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(164, 27);
+            this.textBox4.TabIndex = 2;
             // 
             // frmGestionUsuario
             // 
@@ -258,6 +243,7 @@
             this.Controls.Add(this.dgvGrilla);
             this.Name = "frmGestionUsuario";
             this.Text = "Gestión Usuario";
+            this.Load += new System.EventHandler(this.frmGestionUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

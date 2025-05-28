@@ -24,5 +24,10 @@ namespace pryDealbera_IEFI
             conexion.ConectarBD();
             conexion.ListarBD(dgvGrilla);
         }
+
+        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

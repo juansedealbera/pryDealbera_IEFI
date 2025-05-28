@@ -33,5 +33,10 @@ namespace pryDealbera_IEFI
         {
 
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

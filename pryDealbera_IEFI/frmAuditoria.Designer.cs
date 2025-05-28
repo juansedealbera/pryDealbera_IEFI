@@ -51,6 +51,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(739, 315);
             this.dgvGrilla.TabIndex = 1;
+            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // frmAuditoria
             // 
