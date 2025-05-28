@@ -143,5 +143,59 @@
   <ItemGroup>
     <None Include="Resources\editredo_104349.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemunreadable_93487.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo-arrow-in-a-circle_icon-icons.com_56889.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editredo_1043491.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_circle_create_expand_new_plus_icon_1232181.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_789561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_icon-icons.com_712071.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil-del-usuario %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil-del-usuario %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil-del-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invisible2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editredo_1043492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemunreadable_934871.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir-grupo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
