@@ -18,18 +18,18 @@ namespace pryDealbera_IEFI
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void frmLogin_Load_1(object sender, EventArgs e)
         {
 
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
-            string username = txtUser.Text;
-            string password = txtPass.Text;
+            string connectionString = "Server=PC47;Database=Auditoria;Trusted_Connection=True;";
+            string username = txtUsuario.Text;
+            string password = txtContraseña.Text;
 
-            string query = "SELECT COUNT(*) FROM Usuario WHERE Nombre = @usuario AND Contraseña = @clave";
+            string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @usuario AND Contraseña = @clave";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -59,11 +59,6 @@ namespace pryDealbera_IEFI
                     MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
                 }
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

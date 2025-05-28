@@ -16,5 +16,13 @@ namespace pryDealbera_IEFI
         {
             InitializeComponent();
         }
+
+        clsConexionBD conexion = new clsConexionBD();
+
+        private void frmAuditoria_Load(object sender, EventArgs e)
+        {
+            conexion.ConectarBD();
+            conexion.ListarBD(dgvGrilla);
+        }
     }
 }

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialMultiLineTextBox3 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.btnEliminar = new MaterialSkin.Controls.MaterialButton();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -47,8 +45,6 @@
             this.btnEliminar1 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -56,37 +52,11 @@
             // 
             // materialMultiLineTextBox3
             // 
-            this.materialMultiLineTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialMultiLineTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialMultiLineTextBox3.Depth = 0;
-            this.materialMultiLineTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMultiLineTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox3.Location = new System.Drawing.Point(18, 108);
-            this.materialMultiLineTextBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialMultiLineTextBox3.Name = "materialMultiLineTextBox3";
-            this.materialMultiLineTextBox3.Size = new System.Drawing.Size(178, 24);
-            this.materialMultiLineTextBox3.TabIndex = 5;
-            this.materialMultiLineTextBox3.Text = "";
+            
             // 
             // btnEliminar
             // 
-            this.btnEliminar.AutoSize = false;
-            this.btnEliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnEliminar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnEliminar.Depth = 0;
-            this.btnEliminar.HighEmphasis = true;
-            this.btnEliminar.Icon = null;
-            this.btnEliminar.Location = new System.Drawing.Point(15, 255);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnEliminar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnEliminar.Size = new System.Drawing.Size(175, 36);
-            this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnEliminar.UseAccentColor = false;
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            
             // 
             // dgvGrilla
             // 
@@ -271,29 +241,11 @@
             // 
             // materialLabel2
             // 
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Image = global::pryDealbera_IEFI.Properties.Resources.loupe_78956;
-            this.materialLabel2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.materialLabel2.Location = new System.Drawing.Point(15, 86);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(78, 19);
-            this.materialLabel2.TabIndex = 4;
-            this.materialLabel2.Text = "Password:";
+            
             // 
             // materialLabel3
             // 
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Image = global::pryDealbera_IEFI.Properties.Resources.loupe_78956;
-            this.materialLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.materialLabel3.Location = new System.Drawing.Point(15, 28);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(52, 19);
-            this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "User:";
+            
             // 
             // frmGestionUsuario
             // 
@@ -316,11 +268,7 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox2;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox3;
-        private MaterialSkin.Controls.MaterialButton btnEliminar;
+       
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtContraseña;

@@ -53,7 +53,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "SELECT * FROM RegistroLogin ORDER BY Codigo ASC";
+                    string query = "SELECT * FROM Usuarios ORDER BY Codigo ASC";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -76,19 +76,18 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaId) VALUES (@nombre, @descripcion, @precio, @stock, @categoriaId)";
+                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @numeroContacto)";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 
-                    comando.Parameters.AddWithValue("@nombre", usuario.nombre);
-                    comando.Parameters.AddWithValue("@", usuario.descripcion);
-                    comando.Parameters.AddWithValue("@precio", usuario.precio);
-                    comando.Parameters.AddWithValue("@stock", usuario.stock);
-                    comando.Parameters.AddWithValue("@categoriaId", usuario.categoria);
+                    comando.Parameters.AddWithValue("@usuario", usuario.nombre);
+                    comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                    comando.Parameters.AddWithValue("@correo", usuario.correo);
+                    comando.Parameters.AddWithValue("@numeroContacto", usuario.telefono);
 
                     comando.ExecuteNonQuery();
 
-                    MessageBox.Show("Producto agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -105,20 +104,18 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "UPDATE Productos SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @codigo";
+                    string query = "UPDATE Usuarios SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @codigo";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 
-                    comando.Parameters.AddWithValue("@nombre", producto.nombre);
-                    comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
-                    comando.Parameters.AddWithValue("@precio", producto.precio);
-                    comando.Parameters.AddWithValue("@stock", producto.stock);
-                    comando.Parameters.AddWithValue("@categoriaId", producto.categoria);
-                    comando.Parameters.AddWithValue("@codigo", producto.codigo);
+                    comando.Parameters.AddWithValue("@usuario", usuario.nombre);
+                    comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                    comando.Parameters.AddWithValue("@correo", usuario.correo);
+                    comando.Parameters.AddWithValue("@numeroContacto", usuario.telefono);
 
                     comando.ExecuteNonQuery();
 
-                    MessageBox.Show("Producto modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -135,7 +132,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "DELETE FROM Productos WHERE Codigo = @codigo";
+                    string query = "DELETE FROM Usuarios WHERE Codigo = @codigo";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@codigo", codigo);
@@ -167,7 +164,7 @@ namespace pryDealbera_IEFI
                 {
                     conexion.Open();
 
-                    string query = "SELECT * FROM Productos WHERE Nombre LIKE @nombre";
+                    string query = "SELECT * FROM Usuarios WHERE Usuario LIKE @nombre";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -183,30 +180,6 @@ namespace pryDealbera_IEFI
             catch (Exception error)
             {
                 MessageBox.Show("Error al buscar productos: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        public void BuscarPorCategoria(int categoriaId, DataGridView grilla)
-        {
-            try
-            {
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-                {
-                    conexion.Open();
-                    string query = "SELECT * FROM Productos WHERE CategoriaId = @categoriaId";
-
-                    SqlCommand comando = new SqlCommand(query, conexion);
-                    comando.Parameters.AddWithValue("@categoriaId", categoriaId);
-
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable tabla = new DataTable();
-                    adaptador.Fill(tabla);
-
-                    grilla.DataSource = tabla;
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error al buscar por categoría: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }*/
 

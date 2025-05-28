@@ -85,7 +85,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnEntrar
             // 
@@ -98,6 +97,7 @@
             this.btnEntrar.TabIndex = 13;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
             // 
             // btnVer
             // 
@@ -121,11 +121,13 @@
             this.Controls.Add(this.txtUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmLogin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-    }
+        }
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -134,4 +136,7 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.PictureBox pictureBox1;
+
     }
+    #endregion
+}

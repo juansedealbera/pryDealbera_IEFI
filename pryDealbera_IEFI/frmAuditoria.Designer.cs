@@ -62,6 +62,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAuditoria";
             this.Text = "Auditoria";
+            this.Load += new System.EventHandler(this.frmAuditoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
