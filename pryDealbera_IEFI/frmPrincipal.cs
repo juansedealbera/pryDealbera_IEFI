@@ -38,5 +38,10 @@ namespace pryDealbera_IEFI
         {
             
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

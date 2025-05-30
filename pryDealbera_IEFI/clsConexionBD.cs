@@ -12,7 +12,7 @@ namespace pryDealbera_IEFI
     internal class clsConexionBD
     {
         //cadena de conexion
-        string cadenaConexion = "Server=PC47;Database=Auditoria;Trusted_Connection=True;";
+        string cadenaConexion = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
         //"Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;"
         //Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
         //Server=PC50;Database=Comercio;Trusted_Connection=True;

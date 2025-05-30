@@ -104,7 +104,7 @@
             this.btnVer.Image = global::pryDealbera_IEFI.Properties.Resources.ojo;
             this.btnVer.Location = new System.Drawing.Point(299, 200);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(50, 27);
+            this.btnVer.Size = new System.Drawing.Size(36, 27);
             this.btnVer.TabIndex = 12;
             this.btnVer.UseVisualStyleBackColor = true;
             // 
