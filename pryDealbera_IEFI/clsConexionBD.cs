@@ -95,65 +95,65 @@ namespace pryDealbera_IEFI
             }
         }
 
-        /*public void Modificar(clsUsuario usuario)
+        public void Modificar(clsUsuario usuario)
         {
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "UPDATE Usuarios SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @codigo";
+                    string query = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
+                                   "Correo = @correo, NumeroContacto = @numeroContacto WHERE Id = @id";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
-
                     comando.Parameters.AddWithValue("@usuario", usuario.nombre);
                     comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                     comando.Parameters.AddWithValue("@correo", usuario.correo);
                     comando.Parameters.AddWithValue("@numeroContacto", usuario.telefono);
+                    comando.Parameters.AddWithValue("@id", usuario.Id);
 
                     comando.ExecuteNonQuery();
-
                     MessageBox.Show("Usuario modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al modificar producto: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al modificar usuario: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        public void Eliminar(int codigo)
+        // Eliminar un usuario por ID
+        public void Eliminar(int id)
         {
             try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "DELETE FROM Usuarios WHERE Codigo = @codigo";
+                    string query = "DELETE FROM Usuarios WHERE Id = @id";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
-                    comando.Parameters.AddWithValue("@codigo", codigo);
+                    comando.Parameters.AddWithValue("@id", id);
 
                     int filasAfectadas = comando.ExecuteNonQuery();
 
                     if (filasAfectadas > 0)
                     {
-                        MessageBox.Show("Producto eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró un producto con ese código.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("No se encontró un usuario con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al eliminar producto: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al eliminar usuario: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-       
+        // Buscar usuarios por nombre (LIKE)
         public void BuscarPorNombre(string nombre, DataGridView grilla)
         {
             try
@@ -161,8 +161,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-
-                    string query = "SELECT * FROM Usuarios WHERE Usuario LIKE @nombre";
+                    string query = "SELECT Id, Usuario, Correo, NumeroContacto FROM Usuarios WHERE Usuario LIKE @nombre";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -171,16 +170,14 @@ namespace pryDealbera_IEFI
                     DataTable tabla = new DataTable();
                     adaptador.Fill(tabla);
 
-                    // Mostrar resultados
                     grilla.DataSource = tabla;
                 }
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al buscar productos: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al buscar usuarios: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }*/
-
+        }
 
     }
 }
