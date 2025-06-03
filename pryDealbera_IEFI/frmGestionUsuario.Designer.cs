@@ -44,7 +44,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarNombre = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscarTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(544, 305);
             this.dgvGrilla.TabIndex = 0;
+            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // groupBox1
             // 
@@ -119,6 +121,7 @@
             this.btnEliminar1.TabIndex = 5;
             this.btnEliminar1.Text = "Eliminar";
             this.btnEliminar1.UseVisualStyleBackColor = true;
+            this.btnEliminar1.Click += new System.EventHandler(this.btnEliminar1_Click);
             // 
             // btnAgregar
             // 
@@ -172,6 +175,7 @@
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtContraseña
             // 
@@ -192,12 +196,13 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.groupBox2.Controls.Add(this.btnBuscarTodos);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.btnBuscarNombre);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtBuscar);
             this.groupBox2.Location = new System.Drawing.Point(218, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(283, 85);
+            this.groupBox2.Size = new System.Drawing.Size(433, 85);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opción de Búsqueda";
@@ -223,14 +228,28 @@
             this.btnBuscarNombre.TabIndex = 2;
             this.btnBuscarNombre.Text = "Buscar";
             this.btnBuscarNombre.UseVisualStyleBackColor = true;
+            this.btnBuscarNombre.Click += new System.EventHandler(this.btnBuscarNombre_Click);
             // 
-            // textBox4
+            // txtBuscar
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 44);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 27);
-            this.textBox4.TabIndex = 2;
+            this.txtBuscar.Location = new System.Drawing.Point(6, 44);
+            this.txtBuscar.Multiline = true;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(164, 27);
+            this.txtBuscar.TabIndex = 2;
+            // 
+            // btnBuscarTodos
+            // 
+            this.btnBuscarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnBuscarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarTodos.Location = new System.Drawing.Point(284, 44);
+            this.btnBuscarTodos.Name = "btnBuscarTodos";
+            this.btnBuscarTodos.Size = new System.Drawing.Size(143, 27);
+            this.btnBuscarTodos.TabIndex = 7;
+            this.btnBuscarTodos.Text = "Buscar Todos";
+            this.btnBuscarTodos.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
             // 
             // frmGestionUsuario
             // 
@@ -271,6 +290,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBuscarNombre;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscarTodos;
     }
 }

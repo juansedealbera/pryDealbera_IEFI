@@ -20,7 +20,7 @@ namespace pryDealbera_IEFI
 
         private void frmLogin_Load_1(object sender, EventArgs e)
         {
-
+            txtContraseña.PasswordChar = '●';
         }
 
         private void btnEntrar_Click_1(object sender, EventArgs e)

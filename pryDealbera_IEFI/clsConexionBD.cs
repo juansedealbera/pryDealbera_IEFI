@@ -18,7 +18,6 @@ namespace pryDealbera_IEFI
         //Server=PC50;Database=Comercio;Trusted_Connection=True;
         private SqlConnection conexion;
 
-
         //conector
         SqlConnection coneccionBaseDatos;
 
@@ -26,7 +25,6 @@ namespace pryDealbera_IEFI
         SqlCommand comandoBaseDatos;
 
         public string nombreBaseDeDatos;
-
 
         public void ConectarBD()
         {
@@ -74,7 +72,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @telefono)";
+                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @numeroContacto)";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 

@@ -122,21 +122,21 @@
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(173, 17);
             this.lblUser.Spring = true;
-            this.lblUser.Text = "User:";
+            this.lblUser.Text = "User";
             // 
             // lblFecha
             // 
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(173, 17);
             this.lblFecha.Spring = true;
-            this.lblFecha.Text = "Fecha:";
+            this.lblFecha.Text = "Fecha";
             // 
             // lblTiempo
             // 
             this.lblTiempo.Name = "lblTiempo";
             this.lblTiempo.Size = new System.Drawing.Size(173, 17);
             this.lblTiempo.Spring = true;
-            this.lblTiempo.Text = "Tiempo de Actividad:";
+            this.lblTiempo.Text = "Tiempo de Actividad";
             // 
             // frmPrincipal
             // 
