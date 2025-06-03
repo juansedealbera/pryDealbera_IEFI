@@ -305,6 +305,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvGrilla);
             this.Name = "frmTareas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.groupBox1.ResumeLayout(false);

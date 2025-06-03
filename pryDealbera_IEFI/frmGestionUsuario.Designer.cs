@@ -42,10 +42,10 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarTodos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarNombre = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscarTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -207,6 +207,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opción de Búsqueda";
             // 
+            // btnBuscarTodos
+            // 
+            this.btnBuscarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnBuscarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarTodos.Location = new System.Drawing.Point(284, 44);
+            this.btnBuscarTodos.Name = "btnBuscarTodos";
+            this.btnBuscarTodos.Size = new System.Drawing.Size(143, 27);
+            this.btnBuscarTodos.TabIndex = 7;
+            this.btnBuscarTodos.Text = "Buscar Todos";
+            this.btnBuscarTodos.UseVisualStyleBackColor = true;
+            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -238,19 +251,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(164, 27);
             this.txtBuscar.TabIndex = 2;
             // 
-            // btnBuscarTodos
-            // 
-            this.btnBuscarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
-            this.btnBuscarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarTodos.Location = new System.Drawing.Point(284, 44);
-            this.btnBuscarTodos.Name = "btnBuscarTodos";
-            this.btnBuscarTodos.Size = new System.Drawing.Size(143, 27);
-            this.btnBuscarTodos.TabIndex = 7;
-            this.btnBuscarTodos.Text = "Buscar Todos";
-            this.btnBuscarTodos.UseVisualStyleBackColor = true;
-            this.btnBuscarTodos.Click += new System.EventHandler(this.btnBuscarTodos_Click);
-            // 
             // frmGestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +261,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvGrilla);
             this.Name = "frmGestionUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Usuario";
             this.Load += new System.EventHandler(this.frmGestionUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();

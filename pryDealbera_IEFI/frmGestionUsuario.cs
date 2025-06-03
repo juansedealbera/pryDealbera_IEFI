@@ -38,10 +38,13 @@ namespace pryDealbera_IEFI
               conexion.Agregar(nuevoUsuario);
               conexion.ListarBD(dgvGrilla);
 
-              txtUsuario.Clear();
-              txtContraseña.Clear();
-              txtCorreo.Clear();
-              txtNumero.Clear();
+            /*txtUsuario.Clear();
+            txtContraseña.Clear();
+            txtCorreo.Clear();
+            txtNumero.Clear();*/
+
+              limpiarCampos();
+
 
               btnModificar.Enabled = true;
               btnEliminar1.Enabled = true;
@@ -53,7 +56,7 @@ namespace pryDealbera_IEFI
             if (dgvGrilla.SelectedRows.Count > 0)
             {
                 clsUsuario usuario = new clsUsuario(
-                    Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Codigo"].Value),
+                    Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Id"].Value),
                     txtUsuario.Text,
                     txtContraseña.Text,
                     txtCorreo.Text,
@@ -69,6 +72,7 @@ namespace pryDealbera_IEFI
             {
                 MessageBox.Show("Seleccioná un producto para modificar.");
             }
+            limpiarCampos();
         }
 
         private void btnEliminar1_Click(object sender, EventArgs e)
@@ -76,7 +80,7 @@ namespace pryDealbera_IEFI
             if (dgvGrilla.CurrentRow != null)
             {
                 //valor del código desde la fila seleccionada
-                int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Codigo"].Value);
+                int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Id"].Value);
 
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar a este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -93,6 +97,8 @@ namespace pryDealbera_IEFI
             {
                 MessageBox.Show("Por favor seleccioná una fila para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            limpiarCampos();
         }
 
         private void btnBuscarNombre_Click(object sender, EventArgs e)
@@ -128,5 +134,14 @@ namespace pryDealbera_IEFI
 
             }
         }
+        
+        public void limpiarCampos()
+        {
+            txtUsuario.Clear();
+            txtContraseña.Clear();
+            txtCorreo.Clear();
+            txtNumero.Clear();
+        }
+    
     }
 }

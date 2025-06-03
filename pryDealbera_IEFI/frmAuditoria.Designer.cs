@@ -105,6 +105,7 @@
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.label1);
             this.Name = "frmAuditoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auditoria";
             this.Load += new System.EventHandler(this.frmAuditoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
