@@ -45,7 +45,9 @@ namespace pryDealbera_IEFI
                     if (count > 0)
                     {
                         MessageBox.Show("Inicio de sesión exitoso.");
+
                         frmPrincipal auditoria = new frmPrincipal();
+                        auditoria.UsuarioActivo = username; // ✅ Aquí se pasa el nombre
                         auditoria.Show();
                         this.Hide();
                     }

@@ -101,7 +101,6 @@
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // statusStripMenu
             // 
@@ -115,7 +114,6 @@
             this.statusStripMenu.Size = new System.Drawing.Size(536, 22);
             this.statusStripMenu.TabIndex = 1;
             this.statusStripMenu.Text = "statusTripInicio";
-            this.statusStripMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStripMenu_ItemClicked);
             // 
             // lblUser
             // 
@@ -137,6 +135,10 @@
             this.lblTiempo.Size = new System.Drawing.Size(173, 17);
             this.lblTiempo.Spring = true;
             this.lblTiempo.Text = "Tiempo de Actividad";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
             // 
             // frmPrincipal
             // 

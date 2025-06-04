@@ -17,6 +17,10 @@ namespace pryDealbera_IEFI
             InitializeComponent();
         }
 
+        // Tiempo en que se inició sesión
+        private DateTime tiempoInicio;
+        public string UsuarioActivo { get; set; }
+
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmGestionUsuario x = new frmGestionUsuario();
@@ -29,19 +33,27 @@ namespace pryDealbera_IEFI
             x.ShowDialog();
         }
 
-        private void statusStripMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            // Guardamos el momento en que se inició la sesión
+            tiempoInicio = DateTime.Now;
 
+            // Mostrar el nombre del usuario (debe haberse asignado antes de abrir este formulario)
+            lblUser.Text = $"Usuario: {UsuarioActivo}";
+
+            // Iniciar el Timer
+            timer.Interval = 1000; // 1 segundo
+            timer.Start();
+        }
+
+        private void timer_Tick_1(object sender, EventArgs e)
+        {
+            // Mostrar fecha y hora actual
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+            // Calcular tiempo de sesión
+            TimeSpan tiempoSesion = DateTime.Now - tiempoInicio;
+            lblTiempo.Text = $"Tiempo activo: {tiempoSesion:hh\\:mm\\:ss}";
         }
     }
 }

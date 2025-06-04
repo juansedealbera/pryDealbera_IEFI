@@ -27,28 +27,21 @@ namespace pryDealbera_IEFI
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+              int cargo = Convert.ToInt32(cmbCargo.SelectedValue);
               string Nombre = txtUsuario.Text;
               string Contraseña = txtContraseña.Text;
               string Correo = txtCorreo.Text;
               string Telefono = txtNumero.Text;
 
-              clsUsuario nuevoUsuario = new clsUsuario(0, Nombre, Contraseña, Correo, Telefono);
+              clsUsuario nuevoUsuario = new clsUsuario(0, cargo, Nombre, Contraseña, Correo, Telefono);
 
               conexion.Agregar(nuevoUsuario);
               conexion.ListarBD(dgvGrilla);
 
-            /*txtUsuario.Clear();
-            txtContraseña.Clear();
-            txtCorreo.Clear();
-            txtNumero.Clear();*/
-
               limpiarCampos();
 
-
               btnModificar.Enabled = true;
-              btnEliminar1.Enabled = true;
-            
+              btnEliminar1.Enabled = true;   
         }
         
         private void btnModificar_Click(object sender, EventArgs e)
@@ -57,6 +50,7 @@ namespace pryDealbera_IEFI
             {
                 clsUsuario usuario = new clsUsuario(
                     Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Id"].Value),
+                    Convert.ToInt32(cmbCargo.SelectedValue),
                     txtUsuario.Text,
                     txtContraseña.Text,
                     txtCorreo.Text,

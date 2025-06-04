@@ -9,14 +9,16 @@ namespace pryDealbera_IEFI
     public class clsUsuario
     {
         public int Id { get; set; }
+        public int cargo { get; set; }
         public string nombre { get; set; }
         public string contraseña { get; set; }
         public string correo { get; set; }
         public string telefono { get; set; }
 
-        public clsUsuario(int Id, string nombre, string contraseña, string correo, string telefono)
+        public clsUsuario(int Id, int cargo, string nombre, string contraseña, string correo, string telefono)
         {
             this.Id = Id;
+            this.cargo = cargo;
             this.nombre = nombre;
             this.contraseña = contraseña;
             this.correo = correo;

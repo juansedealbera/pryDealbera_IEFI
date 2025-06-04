@@ -49,7 +49,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -227,9 +226,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(72, 122);
+            this.button1.Location = new System.Drawing.Point(302, 48);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 37);
+            this.button1.Size = new System.Drawing.Size(106, 37);
             this.button1.TabIndex = 19;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
@@ -250,7 +249,6 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.comboBox1);
@@ -266,8 +264,8 @@
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Controls.Add(this.btnCancelar);
-            this.groupBox3.Controls.Add(this.btnGrabar);
             this.groupBox3.Controls.Add(this.lstLista);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(517, 12);
             this.groupBox3.Name = "groupBox3";
@@ -278,21 +276,12 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(302, 94);
+            this.btnCancelar.Location = new System.Drawing.Point(302, 91);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 37);
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Location = new System.Drawing.Point(302, 54);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(106, 37);
-            this.btnGrabar.TabIndex = 23;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
             // 
             // frmTareas
             // 
@@ -339,6 +328,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGrabar;
     }
 }
