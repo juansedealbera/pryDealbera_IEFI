@@ -215,5 +215,20 @@
   <ItemGroup>
     <None Include="Resources\usuarios %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trabajo-en-equipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poder.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

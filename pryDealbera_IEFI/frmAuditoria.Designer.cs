@@ -34,6 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnVerTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(278, 21);
+            this.label3.Location = new System.Drawing.Point(236, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 16);
             this.label3.TabIndex = 4;
@@ -79,10 +81,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(471, 21);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(429, 18);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
+            this.textBox1.Size = new System.Drawing.Size(148, 25);
             this.textBox1.TabIndex = 5;
             // 
             // dateTimePicker1
@@ -92,12 +95,38 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(583, 12);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(108, 35);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnVerTodos
+            // 
+            this.btnVerTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnVerTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerTodos.Location = new System.Drawing.Point(583, 53);
+            this.btnVerTodos.Name = "btnVerTodos";
+            this.btnVerTodos.Size = new System.Drawing.Size(108, 35);
+            this.btnVerTodos.TabIndex = 8;
+            this.btnVerTodos.Text = "Ver Todos";
+            this.btnVerTodos.UseVisualStyleBackColor = true;
+            // 
             // frmAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(767, 427);
+            this.Controls.Add(this.btnVerTodos);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -122,5 +151,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnVerTodos;
     }
 }

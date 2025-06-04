@@ -30,17 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMenu = new System.Windows.Forms.StatusStrip();
             this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTiempo = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.statusStripMenu.SuspendLayout();
             this.SuspendLayout();
@@ -55,52 +57,9 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(536, 24);
+            this.menu.Size = new System.Drawing.Size(536, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menu";
-            // 
-            // tareasToolStripMenuItem
-            // 
-            this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.tareasToolStripMenuItem.Text = "Tareas";
-            // 
-            // administraciónToolStripMenuItem
-            // 
-            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
-            this.auditoriaToolStripMenuItem});
-            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.administraciónToolStripMenuItem.Text = "Administración";
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
-            // 
-            // auditoriaToolStripMenuItem
-            // 
-            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.auditoriaToolStripMenuItem.Text = "Auditoria";
-            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesiónToolStripMenuItem});
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             // 
             // statusStripMenu
             // 
@@ -140,6 +99,73 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
             // 
+            // tareasToolStripMenuItem
+            // 
+            this.tareasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarTareaToolStripMenuItem,
+            this.historialTareasToolStripMenuItem});
+            this.tareasToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.documento;
+            this.tareasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.tareasToolStripMenuItem.Text = "Tareas";
+            // 
+            // registrarTareaToolStripMenuItem
+            // 
+            this.registrarTareaToolStripMenuItem.Name = "registrarTareaToolStripMenuItem";
+            this.registrarTareaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.registrarTareaToolStripMenuItem.Text = "RegistrarTarea";
+            this.registrarTareaToolStripMenuItem.Click += new System.EventHandler(this.registrarTareaToolStripMenuItem_Click);
+            // 
+            // historialTareasToolStripMenuItem
+            // 
+            this.historialTareasToolStripMenuItem.Name = "historialTareasToolStripMenuItem";
+            this.historialTareasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.historialTareasToolStripMenuItem.Text = "Historial Tareas";
+            this.historialTareasToolStripMenuItem.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
+            // 
+            // administraciónToolStripMenuItem
+            // 
+            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuariosToolStripMenuItem,
+            this.auditoriaToolStripMenuItem});
+            this.administraciónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.trabajo_en_equipo;
+            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
+            this.administraciónToolStripMenuItem.Text = "Administración";
+            this.administraciónToolStripMenuItem.Click += new System.EventHandler(this.administraciónToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // auditoriaToolStripMenuItem
+            // 
+            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
+            this.salirToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.cerrar_sesion;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.poder;
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +202,8 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarTareaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialTareasToolStripMenuItem;
     }
 }
 

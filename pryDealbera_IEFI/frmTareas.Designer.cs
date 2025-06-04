@@ -185,7 +185,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 67);
+            this.label8.Location = new System.Drawing.Point(8, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 16;
@@ -207,7 +207,7 @@
             "Inspección",
             "Reclamos",
             "Visita"});
-            this.comboBox1.Location = new System.Drawing.Point(58, 64);
+            this.comboBox1.Location = new System.Drawing.Point(58, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(149, 21);
             this.comboBox1.TabIndex = 18;
@@ -219,13 +219,14 @@
             "Empresa",
             "Servicio",
             "Oficina"});
-            this.comboBox2.Location = new System.Drawing.Point(58, 91);
+            this.comboBox2.Location = new System.Drawing.Point(58, 119);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(149, 21);
             this.comboBox2.TabIndex = 21;
             // 
             // button1
             // 
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(302, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 37);
@@ -237,7 +238,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 94);
+            this.label9.Location = new System.Drawing.Point(8, 122);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 20;
@@ -276,6 +277,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(302, 91);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 37);

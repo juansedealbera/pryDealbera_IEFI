@@ -176,6 +176,5 @@ namespace pryDealbera_IEFI
                 MessageBox.Show("Error al buscar usuarios: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
