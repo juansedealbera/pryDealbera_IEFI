@@ -18,72 +18,79 @@ namespace pryDealbera_IEFI
         }
 
         clsConexionBD conexion = new clsConexionBD();
+        private int IdSeleccionado = 0;
 
         private void frmGestionUsuario_Load(object sender, EventArgs e)
         {
             conexion.ConectarBD();
             conexion.ListarBD(dgvGrilla);
+            conexion.CargarCargos(cmbCargo);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-              int cargo = Convert.ToInt32(cmbCargo.SelectedValue);
-              string Nombre = txtUsuario.Text;
-              string Contraseña = txtContraseña.Text;
-              string Correo = txtCorreo.Text;
-              string Telefono = txtNumero.Text;
+            if (cmbCargo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un cargo.");
+                return;
+            }
 
-              clsUsuario nuevoUsuario = new clsUsuario(0, cargo, Nombre, Contraseña, Correo, Telefono);
+            int idCargo = Convert.ToInt32(cmbCargo.SelectedValue);
+            string nombre = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
+            string correo = txtCorreo.Text;
+            string telefono = txtNumero.Text;
 
-              conexion.Agregar(nuevoUsuario);
-              conexion.ListarBD(dgvGrilla);
+            clsUsuario nuevoUsuario = new clsUsuario(0, idCargo, nombre, contraseña, correo, telefono);
 
-              limpiarCampos();
+            conexion.Agregar(nuevoUsuario);
+            conexion.ListarBD(dgvGrilla);
+            limpiarCampos();
 
-              btnModificar.Enabled = true;
-              btnEliminar1.Enabled = true;   
+            btnModificar.Enabled = true;
+            btnEliminar1.Enabled = true;
         }
         
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (dgvGrilla.SelectedRows.Count > 0)
             {
-                clsUsuario usuario = new clsUsuario(
-                    Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Id"].Value),
-                    Convert.ToInt32(cmbCargo.SelectedValue),
-                    txtUsuario.Text,
-                    txtContraseña.Text,
-                    txtCorreo.Text,
-                    txtNumero.Text
-                );
+                int id = Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Id"].Value);
 
-                clsConexionBD objConexion = new clsConexionBD();
-                objConexion.Modificar(usuario);
+                if (cmbCargo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un cargo.");
+                    return;
+                }
 
-                objConexion.ListarBD(dgvGrilla);
+                int idCargo = Convert.ToInt32(cmbCargo.SelectedValue);
+                string nombre = txtUsuario.Text;
+                string contraseña = txtContraseña.Text;
+                string correo = txtCorreo.Text;
+                string telefono = txtNumero.Text;
+
+                clsUsuario usuario = new clsUsuario(id, idCargo, nombre, contraseña, correo, telefono);
+
+                conexion.Modificar(usuario);
+                conexion.ListarBD(dgvGrilla);
             }
             else
             {
-                MessageBox.Show("Seleccioná un producto para modificar.");
+                MessageBox.Show("Seleccioná un usuario de la grilla para modificar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            limpiarCampos();
         }
 
         private void btnEliminar1_Click(object sender, EventArgs e)
         {
             if (dgvGrilla.CurrentRow != null)
             {
-                //valor del código desde la fila seleccionada
                 int codigoSeleccionado = Convert.ToInt32(dgvGrilla.CurrentRow.Cells["Id"].Value);
 
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar a este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    clsConexionBD conexion = new clsConexionBD();
-
                     conexion.Eliminar(codigoSeleccionado);
-
                     conexion.ListarBD(dgvGrilla);
                 }
             }
@@ -121,6 +128,7 @@ namespace pryDealbera_IEFI
             {
                 DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
 
+                cmbCargo.SelectedValue = fila.Cells["Cargo"].Value;
                 txtUsuario.Text = fila.Cells["Nombre"].Value.ToString();
                 txtContraseña.Text = fila.Cells["Contraseña"].Value.ToString();
                 txtCorreo.Text = fila.Cells["Correo"].Value.ToString();

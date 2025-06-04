@@ -99,7 +99,7 @@ namespace pryDealbera_IEFI
             // Aquí podés guardar en la base de datos
             using (SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;"))
             {
-                string query = "INSERT INTO RegistroSesiones (Usuario, FechaInicio, FechaFin, Duracion) VALUES (@usuario, @inicio, @fin, @duracion)";
+                string query = "INSERT INTO Sesiones (Usuario, FechaInicio, FechaFin, Duracion) VALUES (@usuario, @inicio, @fin, @duracion)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@usuario", UsuarioActivo);
                 cmd.Parameters.AddWithValue("@inicio", tiempoInicio);

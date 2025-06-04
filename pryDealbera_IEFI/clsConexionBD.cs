@@ -49,7 +49,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conn = new SqlConnection(cadenaConexion))
                 {
                     conn.Open();
-                    string query = "SELECT Id, Usuario, Correo, NumeroContacto FROM Usuarios ORDER BY Id ASC";
+                    string query = "SELECT Id, Cargo, Usuario, Correo, NumeroContacto FROM Usuarios ORDER BY Id ASC";
 
                     SqlCommand comando = new SqlCommand(query, conn);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -65,6 +65,32 @@ namespace pryDealbera_IEFI
             }
         }
 
+        public void CargarCargos(ComboBox comboBox)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT Nombre FROM Cargos WHERE Nombre IN ('Administrador', 'Operario')";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    comboBox.DataSource = tabla;
+                    comboBox.DisplayMember = "Nombre";
+                    comboBox.SelectedIndex = -1;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al cargar cargos: " + error.Message);
+            }
+        }
+
         public void Agregar(clsUsuario usuario)
         {
             try
@@ -72,10 +98,11 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Correo, NumeroContacto) VALUES (@usuario, @contraseña, @correo, @numeroContacto)";
+                    string query = "INSERT INTO Usuarios (Cargo, Usuario, Contraseña, Correo, NumeroContacto) VALUES (@cargo, @usuario, @contraseña, @correo, @numeroContacto)";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 
+                    comando.Parameters.AddWithValue("@cargo", usuario.cargo);
                     comando.Parameters.AddWithValue("@usuario", usuario.nombre);
                     comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                     comando.Parameters.AddWithValue("@correo", usuario.correo);
@@ -100,10 +127,10 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "UPDATE Usuarios SET Usuario = @usuario, Contraseña = @contraseña, " +
-                                   "Correo = @correo, NumeroContacto = @numeroContacto WHERE Id = @id";
+                    string query = "UPDATE Usuarios SET Cargo = @cargo, Usuario = @usuario, Contraseña = @contraseña, Correo = @correo, NumeroContacto = @numeroContacto WHERE Id = @id";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@cargo", usuario.cargo);
                     comando.Parameters.AddWithValue("@usuario", usuario.nombre);
                     comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                     comando.Parameters.AddWithValue("@correo", usuario.correo);
@@ -118,6 +145,7 @@ namespace pryDealbera_IEFI
             {
                 MessageBox.Show("Error al modificar usuario: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         // Eliminar un usuario por ID
