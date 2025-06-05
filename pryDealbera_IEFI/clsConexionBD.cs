@@ -49,7 +49,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conn = new SqlConnection(cadenaConexion))
                 {
                     conn.Open();
-                    string query = "SELECT Id, Cargo, Usuario, Correo, NumeroContacto FROM Usuarios ORDER BY Id ASC";
+                    string query = "SELECT Id, Cargo AS IdCargo, Nombre AS Usuario, Correo, Contacto AS NumeroContacto FROM Usuarios ORDER BY Id ASC";
 
                     SqlCommand comando = new SqlCommand(query, conn);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -72,7 +72,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "SELECT Nombre FROM Cargos WHERE Nombre IN ('Administrador', 'Operario')";
+                    string query = "SELECT Id, Nombre FROM Cargos WHERE Nombre IN ('Administrador', 'Operario')";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -82,6 +82,7 @@ namespace pryDealbera_IEFI
 
                     comboBox.DataSource = tabla;
                     comboBox.DisplayMember = "Nombre";
+                    comboBox.ValueMember = "Id";  // <- ESTO ES CLAVE
                     comboBox.SelectedIndex = -1;
                 }
             }

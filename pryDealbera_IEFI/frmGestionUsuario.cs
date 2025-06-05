@@ -55,7 +55,6 @@ namespace pryDealbera_IEFI
         {
             if (dgvGrilla.SelectedRows.Count > 0)
             {
-                int id = Convert.ToInt32(dgvGrilla.SelectedRows[0].Cells["Id"].Value);
 
                 if (cmbCargo.SelectedIndex == -1)
                 {
@@ -69,7 +68,7 @@ namespace pryDealbera_IEFI
                 string correo = txtCorreo.Text;
                 string telefono = txtNumero.Text;
 
-                clsUsuario usuario = new clsUsuario(id, idCargo, nombre, contraseña, correo, telefono);
+                clsUsuario usuario = new clsUsuario(IdSeleccionado, idCargo, nombre, contraseña, correo, telefono);
 
                 conexion.Modificar(usuario);
                 conexion.ListarBD(dgvGrilla);
@@ -128,7 +127,9 @@ namespace pryDealbera_IEFI
             {
                 DataGridViewRow fila = dgvGrilla.Rows[e.RowIndex];
 
-                cmbCargo.SelectedValue = fila.Cells["Cargo"].Value;
+                IdSeleccionado = Convert.ToInt32(fila.Cells["Id"].Value);
+
+                cmbCargo.SelectedValue = fila.Cells["IdCargo"].Value;
                 txtUsuario.Text = fila.Cells["Nombre"].Value.ToString();
                 txtContraseña.Text = fila.Cells["Contraseña"].Value.ToString();
                 txtCorreo.Text = fila.Cells["Correo"].Value.ToString();
