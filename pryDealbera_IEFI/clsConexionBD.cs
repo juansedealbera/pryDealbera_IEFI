@@ -49,7 +49,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conn = new SqlConnection(cadenaConexion))
                 {
                     conn.Open();
-                    string query = "SELECT Id, Cargo AS IdCargo, Nombre AS Usuario, Correo, Contacto AS NumeroContacto FROM Usuarios ORDER BY Id ASC";
+                    string query = "SELECT Id, IdCargo, Nombre AS Usuario, Correo, Telefono AS NumeroContacto FROM Usuarios ORDER BY Id ASC"; ;
 
                     SqlCommand comando = new SqlCommand(query, conn);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
@@ -99,12 +99,12 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "INSERT INTO Usuarios (Cargo, Usuario, Contraseña, Correo, NumeroContacto) VALUES (@cargo, @usuario, @contraseña, @correo, @numeroContacto)";
+                    string query = "INSERT INTO Usuarios (IdCargo, Nombre, Contraseña, Correo, Telefono) VALUES (@cargo, @nombre, @contraseña, @correo, @numeroContacto)";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
 
                     comando.Parameters.AddWithValue("@cargo", usuario.cargo);
-                    comando.Parameters.AddWithValue("@usuario", usuario.nombre);
+                    comando.Parameters.AddWithValue("@nombre", usuario.nombre);
                     comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                     comando.Parameters.AddWithValue("@correo", usuario.correo);
                     comando.Parameters.AddWithValue("@numeroContacto", usuario.telefono);
@@ -128,11 +128,11 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "UPDATE Usuarios SET Cargo = @cargo, Usuario = @usuario, Contraseña = @contraseña, Correo = @correo, NumeroContacto = @numeroContacto WHERE Id = @id";
+                    string query = "UPDATE Usuarios SET IdCargo = @cargo, Nombre = @nombre, Contraseña = @contraseña, Correo = @correo, Telefono = @numeroContacto WHERE Id = @id";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@cargo", usuario.cargo);
-                    comando.Parameters.AddWithValue("@usuario", usuario.nombre);
+                    comando.Parameters.AddWithValue("@nombre", usuario.nombre);
                     comando.Parameters.AddWithValue("@contraseña", usuario.contraseña);
                     comando.Parameters.AddWithValue("@correo", usuario.correo);
                     comando.Parameters.AddWithValue("@numeroContacto", usuario.telefono);
@@ -188,7 +188,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "SELECT Id, Usuario, Correo, NumeroContacto FROM Usuarios WHERE Usuario LIKE @nombre";
+                    string query = "SELECT Id, Nombre AS Usuario, Correo, Telefono AS NumeroContacto FROM Usuarios WHERE Nombre LIKE @nombre";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");

@@ -26,41 +26,52 @@ namespace pryDealbera_IEFI
         private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
-            string username = txtUsuario.Text;
-            string password = txtContraseña.Text;
+            string usuario = txtUsuario.Text.Trim();
+            string contraseña = txtContraseña.Text;
 
-            string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @usuario AND Contraseña = @clave";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
             {
-                try
+                MessageBox.Show("Por favor, ingrese usuario y contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string query = "SELECT COUNT(*) FROM Usuarios WHERE Nombre = @Usuario AND Contraseña = @Contraseña";
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@usuario", username);
-                    cmd.Parameters.AddWithValue("@clave", password);
+                    comando.Parameters.Add("@Usuario", System.Data.SqlDbType.VarChar, 50).Value = usuario;
+                    comando.Parameters.Add("@Contraseña", System.Data.SqlDbType.VarChar, 50).Value = contraseña;
 
-                    int count = (int)cmd.ExecuteScalar();
+                    conexion.Open();
+                    int coincidencias = (int)comando.ExecuteScalar();
 
-                    if (count > 0)
+                    if (coincidencias > 0)
                     {
-                        MessageBox.Show("Inicio de sesión exitoso.");
+                        MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        frmPrincipal auditoria = new frmPrincipal();
-                        auditoria.UsuarioActivo = username; // ✅ Aquí se pasa el nombre
-                        auditoria.Show();
+                        frmPrincipal principal = new frmPrincipal();
+                        principal.UsuarioActivo = usuario; // Se pasa el nombre de usuario
+                        principal.Show();
                         this.Hide();
                     }
                     else
                     {
-                        MessageBox.Show("Usuario o contraseña incorrectos.");
+                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error de base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+
