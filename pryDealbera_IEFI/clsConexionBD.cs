@@ -205,5 +205,43 @@ namespace pryDealbera_IEFI
                 MessageBox.Show("Error al buscar usuarios: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void ListarSesiones(DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = @"
+                SELECT 
+                    u.Nombre AS Usuario,
+                    s.Fecha,
+                    s.HoraInicio,
+                    s.HoraFin,
+                    s.TiempoTranscurrido
+                FROM 
+                    Sesiones s
+                INNER JOIN 
+                    Usuarios u ON s.IdUsuario = u.Id
+                ORDER BY 
+                    s.Fecha DESC, s.HoraInicio DESC";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudieron cargar las sesiones correctamente. Detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

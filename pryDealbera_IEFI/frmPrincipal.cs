@@ -23,6 +23,15 @@ namespace pryDealbera_IEFI
         public string UsuarioActivo { get; set; }
         public string CargoUsuario { get; set; }
 
+        private string nombreUsuario;
+        private int rolUsuario;
+        private DateTime fechaInicio;
+        private DateTime horaInicio;
+        private DateTime horaFin;
+        private TimeSpan tiempoTranscurrido;
+
+        private int tiempoActual = 0;
+
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             // Guardamos el momento en que se inició la sesión
@@ -84,39 +93,12 @@ namespace pryDealbera_IEFI
             if (resultado == DialogResult.Yes)
             {
                 timer.Stop();
-                GuardarRegistroSesion();
+                cerrarSesiónToolStripMenuItem.Enabled = false;
+
 
                 frmLogin login = new frmLogin();
                 login.Show();
                 this.Close();
-            }
-        }
-
-        private void GuardarRegistroSesion()
-        {
-            TimeSpan duracion = DateTime.Now - tiempoInicio;
-
-            // Aquí podés guardar en la base de datos
-            using (SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;"))
-            {
-                string query = "INSERT INTO Sesiones (Nombre, FechaInicio, FechaFin, Duracion) VALUES (@nombre, @inicio, @fin, @duracion)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nombre", UsuarioActivo);
-                cmd.Parameters.AddWithValue("@inicio", tiempoInicio);
-                cmd.Parameters.AddWithValue("@fin", DateTime.Now);
-                cmd.Parameters.AddWithValue("@duracion", duracion.ToString(@"hh\:mm\:ss"));
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-        }
-
-        private void administraciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (CargoUsuario == "Operador")
-            {
-                MessageBox.Show("No tienes acceso a esta sección. Siga con las tareas asignadas o contacte a un administrador si cree que esto es un error.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
             }
         }
 

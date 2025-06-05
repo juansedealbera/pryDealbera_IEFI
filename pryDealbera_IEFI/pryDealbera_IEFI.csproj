@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAuditoriaSesiones.cs" />
     <Compile Include="clsConexionBD.cs" />
     <Compile Include="clsUsuario.cs" />
     <Compile Include="frmAuditoria.cs">

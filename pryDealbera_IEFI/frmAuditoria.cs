@@ -19,10 +19,11 @@ namespace pryDealbera_IEFI
 
         clsConexionBD conexion = new clsConexionBD();
 
+
         private void frmAuditoria_Load(object sender, EventArgs e)
         {
             conexion.ConectarBD();
-            conexion.ListarBD(dgvGrilla);
+            conexion.ListarSesiones(dgvGrilla);
         }
 
         private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
