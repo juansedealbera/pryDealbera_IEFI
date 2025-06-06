@@ -252,7 +252,7 @@ namespace pryDealbera_IEFI
                     conexion.Open();
 
                     string query = @"INSERT INTO Sesiones 
-                             (IdUsuario, FechaInicio, HoraInicio, HoraFin, TiempoTranscurrido) 
+                             (IdUsuario, Fecha, HoraInicio, HoraFin, TiempoTranscurrido) 
                              VALUES 
                              (@idUsuario, @fechaInicio, @horaInicio, @horaFin, @tiempoTranscurrido)";
 

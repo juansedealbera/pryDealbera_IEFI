@@ -27,7 +27,7 @@ namespace pryDealbera_IEFI
 
         private string nombreUsuario;
         private int cargoUsuario;
-        private DateTime fechaInicio;
+        private DateTime Fecha;
         private DateTime horaInicio;
         private DateTime horaFin;
         private TimeSpan tiempoTranscurrido;
@@ -36,6 +36,11 @@ namespace pryDealbera_IEFI
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            horaInicio = DateTime.Now;
+            Fecha = horaInicio.Date;
+            nombreUsuario = UsuarioActivo;
+            timer.Start();
+
             // Guardamos el momento en que se inició la sesión
             tiempoInicio = DateTime.Now;
 
@@ -94,21 +99,25 @@ namespace pryDealbera_IEFI
         //cerrar
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            timer.Enabled = false; //detiene el timer
+            nombreUsuario = UsuarioActivo;
 
-            horaFin = DateTime.Now; //obtiene la hora de cierre 
+            timer.Enabled = false;
 
-            //Tiempo Transcurrido
+            horaFin = DateTime.Now;
             tiempoTranscurrido = horaFin - horaInicio;
 
-            //Obtengo Id del Usuario por Nombre
-            int idUsuario = conexionBD.ObtenerIdUsuario(nombreUsuario);
+            int idUsuario = conexionBD.ObtenerIdUsuario(nombreUsuario); // nombreUsuario ya debería estar asignado
 
-            clsAuditoriaSesiones sesion = new clsAuditoriaSesiones(0, idUsuario, fechaInicio, horaInicio, horaFin, tiempoTranscurrido);
-
+            clsAuditoriaSesiones sesion = new clsAuditoriaSesiones(
+                0,
+                idUsuario,
+                Fecha,
+                horaInicio,
+                horaFin,
+                tiempoTranscurrido
+            );
 
             conexionBD.GuardarSesion(sesion);
-            Application.Exit();
         }
     
         public void permisos()
