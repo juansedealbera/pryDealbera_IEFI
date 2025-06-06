@@ -13,9 +13,7 @@ namespace pryDealbera_IEFI
     {
         //cadena de conexion
         string cadenaConexion = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
-        //"Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;"
-        //Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
-        //Server=PC50;Database=Comercio;Trusted_Connection=True;
+        //Server=PC50;Database=Auditoria;Trusted_Connection=True;
         private SqlConnection conexion;
 
         //conector
@@ -26,6 +24,7 @@ namespace pryDealbera_IEFI
 
         public string nombreBaseDeDatos;
 
+        //conexion
         public void ConectarBD()
         {
             try
@@ -42,6 +41,7 @@ namespace pryDealbera_IEFI
 
         }
 
+        //mostrar bdd en grilla
         public void ListarBD(DataGridView grilla)
         {
             try
@@ -65,6 +65,7 @@ namespace pryDealbera_IEFI
             }
         }
 
+        //CRUD
         public void CargarCargos(ComboBox comboBox)
         {
             try
@@ -179,6 +180,8 @@ namespace pryDealbera_IEFI
                 MessageBox.Show("Error al eliminar usuario: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Fin CRUD
+
 
         // Buscar usuarios por nombre (LIKE)
         public void BuscarPorNombre(string nombre, DataGridView grilla)
@@ -206,6 +209,7 @@ namespace pryDealbera_IEFI
             }
         }
 
+        //Metodos Para Auditar
         public void ListarSesiones(DataGridView grilla)
         {
             try

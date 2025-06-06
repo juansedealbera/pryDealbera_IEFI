@@ -120,6 +120,7 @@ namespace pryDealbera_IEFI
             conexionBD.GuardarSesion(sesion);
         }
     
+        //Opcion para restringir permisos
         public void permisos()
         {
             if (cargoUsuario == 2)
