@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.statusStripMenu = new System.Windows.Forms.StatusStrip();
-            this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblTiempo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +38,11 @@
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStripMenu = new System.Windows.Forms.StatusStrip();
+            this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTiempo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.statusStripMenu.SuspendLayout();
             this.SuspendLayout();
@@ -60,44 +60,6 @@
             this.menu.Size = new System.Drawing.Size(536, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menu";
-            // 
-            // statusStripMenu
-            // 
-            this.statusStripMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblUser,
-            this.lblFecha,
-            this.lblTiempo});
-            this.statusStripMenu.Location = new System.Drawing.Point(0, 341);
-            this.statusStripMenu.Name = "statusStripMenu";
-            this.statusStripMenu.Size = new System.Drawing.Size(536, 22);
-            this.statusStripMenu.TabIndex = 1;
-            this.statusStripMenu.Text = "statusTripInicio";
-            // 
-            // lblUser
-            // 
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(173, 17);
-            this.lblUser.Spring = true;
-            this.lblUser.Text = "User";
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(173, 17);
-            this.lblFecha.Spring = true;
-            this.lblFecha.Text = "Fecha";
-            // 
-            // lblTiempo
-            // 
-            this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(173, 17);
-            this.lblTiempo.Spring = true;
-            this.lblTiempo.Text = "Tiempo de Actividad";
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
             // 
             // tareasToolStripMenuItem
             // 
@@ -161,8 +123,46 @@
             // 
             this.cerrarSesiónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.poder;
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            // 
+            // statusStripMenu
+            // 
+            this.statusStripMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUser,
+            this.lblFecha,
+            this.lblTiempo});
+            this.statusStripMenu.Location = new System.Drawing.Point(0, 341);
+            this.statusStripMenu.Name = "statusStripMenu";
+            this.statusStripMenu.Size = new System.Drawing.Size(536, 22);
+            this.statusStripMenu.TabIndex = 1;
+            this.statusStripMenu.Text = "statusTripInicio";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(173, 17);
+            this.lblUser.Spring = true;
+            this.lblUser.Text = "User";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(173, 17);
+            this.lblFecha.Spring = true;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(173, 17);
+            this.lblTiempo.Spring = true;
+            this.lblTiempo.Text = "Tiempo de Actividad";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
             // 
             // frmPrincipal
             // 
@@ -176,6 +176,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

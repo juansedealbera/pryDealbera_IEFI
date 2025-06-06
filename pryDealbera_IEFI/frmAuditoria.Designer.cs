@@ -136,7 +136,6 @@
             this.Name = "frmAuditoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auditoria";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAuditoria_FormClosed);
             this.Load += new System.EventHandler(this.frmAuditoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);

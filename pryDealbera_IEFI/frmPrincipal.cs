@@ -18,13 +18,15 @@ namespace pryDealbera_IEFI
             InitializeComponent();
         }
 
+        clsConexionBD conexionBD = new clsConexionBD();
+
         // Tiempo en que se inició sesión
         private DateTime tiempoInicio;
         public string UsuarioActivo { get; set; }
         public string CargoUsuario { get; set; }
 
         private string nombreUsuario;
-        private int rolUsuario;
+        private int cargoUsuario;
         private DateTime fechaInicio;
         private DateTime horaInicio;
         private DateTime horaFin;
@@ -45,13 +47,15 @@ namespace pryDealbera_IEFI
             timer.Start();
 
             // Control de acceso por cargo
-            if (CargoUsuario == "Operador")
+            if (CargoUsuario == "Operario")
             {
                 administraciónToolStripMenuItem.Enabled = false;
             }
 
+            //permisos();
         }
 
+        //Opciones Menu
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmGestionUsuario x = new frmGestionUsuario();
@@ -76,6 +80,7 @@ namespace pryDealbera_IEFI
             x.ShowDialog();
         }
 
+        //control tiempo
         private void timer_Tick_1(object sender, EventArgs e)
         {
             // Mostrar fecha y hora actual
@@ -86,23 +91,34 @@ namespace pryDealbera_IEFI
             lblTiempo.Text = $"Tiempo activo: {tiempoSesion:hh\\:mm\\:ss}";
         }
 
-
-
-        /*private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        //cerrar
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            timer.Enabled = false; //detiene el timer
 
-            if (resultado == DialogResult.Yes)
+            horaFin = DateTime.Now; //obtiene la hora de cierre 
+
+            //Tiempo Transcurrido
+            tiempoTranscurrido = horaFin - horaInicio;
+
+            //Obtengo Id del Usuario por Nombre
+            int idUsuario = conexionBD.ObtenerIdUsuario(nombreUsuario);
+
+            clsAuditoriaSesiones sesion = new clsAuditoriaSesiones(0, idUsuario, fechaInicio, horaInicio, horaFin, tiempoTranscurrido);
+
+
+            conexionBD.GuardarSesion(sesion);
+            Application.Exit();
+        }
+    
+        public void permisos()
+        {
+            if (cargoUsuario == 2)
             {
-                timer.Stop();
-                cerrarSesiónToolStripMenuItem.Enabled = false;
-
-
-                frmLogin login = new frmLogin();
-                login.Show();
-                this.Close();
+                auditoriaToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
             }
-        }*/
-
+        }
+    
     }
 }

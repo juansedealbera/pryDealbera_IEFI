@@ -28,28 +28,5 @@ namespace pryDealbera_IEFI
         {
 
         }
-
-        private void frmAuditoria_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            timerTiempo.Enabled = false;
-
-            horaFin = DateTime.Now;
-            tiempoTranscurrido = horaFin - horaInicio;
-
-            int idUsuario = conexion.ObtenerIdUsuarioPorNombre(nombreUsuario);
-
-            clsSesion sesion = new clsSesion(
-                0,
-                idUsuario,
-                fechaInicio,
-                horaInicio,
-                horaFin,
-                tiempoTranscurrido
-            );
-
-            conexion.GuardarSesion(sesion);
-
-            Application.Exit(); // cerrar completamente la app
-        }
     }
 }
