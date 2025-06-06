@@ -61,6 +61,7 @@
             // 
             // txtContraseña
             // 
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(108, 200);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
@@ -69,6 +70,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(108, 148);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";

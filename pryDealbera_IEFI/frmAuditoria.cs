@@ -18,8 +18,6 @@ namespace pryDealbera_IEFI
         }
 
         clsConexionBD conexion = new clsConexionBD();
-
-
         private void frmAuditoria_Load(object sender, EventArgs e)
         {
             conexion.ConectarBD();
@@ -29,6 +27,29 @@ namespace pryDealbera_IEFI
         private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frmAuditoria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timerTiempo.Enabled = false;
+
+            horaFin = DateTime.Now;
+            tiempoTranscurrido = horaFin - horaInicio;
+
+            int idUsuario = conexion.ObtenerIdUsuarioPorNombre(nombreUsuario);
+
+            clsSesion sesion = new clsSesion(
+                0,
+                idUsuario,
+                fechaInicio,
+                horaInicio,
+                horaFin,
+                tiempoTranscurrido
+            );
+
+            conexion.GuardarSesion(sesion);
+
+            Application.Exit(); // cerrar completamente la app
         }
     }
 }

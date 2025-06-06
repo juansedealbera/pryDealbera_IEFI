@@ -86,7 +86,9 @@ namespace pryDealbera_IEFI
             lblTiempo.Text = $"Tiempo activo: {tiempoSesion:hh\\:mm\\:ss}";
         }
 
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        /*private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -100,7 +102,7 @@ namespace pryDealbera_IEFI
                 login.Show();
                 this.Close();
             }
-        }
+        }*/
 
     }
 }

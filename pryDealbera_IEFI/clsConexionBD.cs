@@ -243,5 +243,68 @@ namespace pryDealbera_IEFI
             }
         }
 
+        public void GuardarSesion(clsAuditoriaSesiones sesion)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = @"INSERT INTO Sesiones 
+                             (IdUsuario, FechaInicio, HoraInicio, HoraFin, TiempoTranscurrido) 
+                             VALUES 
+                             (@idUsuario, @fechaInicio, @horaInicio, @horaFin, @tiempoTranscurrido)";
+
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@idUsuario", sesion.IdUsuario);
+                        comando.Parameters.AddWithValue("@fechaInicio", sesion.Fecha.Date);
+                        comando.Parameters.AddWithValue("@horaInicio", sesion.HoraInicio.TimeOfDay);
+                        comando.Parameters.AddWithValue("@horaFin", sesion.HoraFin.TimeOfDay);
+                        comando.Parameters.AddWithValue("@tiempoTranscurrido", sesion.TiempoTranscurrido);
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al guardar sesión: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public int ObtenerIdUsuario(string nombreUsuario)
+        {
+            int id = -1;
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = "SELECT Id FROM Usuarios WHERE Nombre = @nombre";
+                    using (SqlCommand comando = new SqlCommand(query, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@nombre", nombreUsuario);
+
+                        object resultado = comando.ExecuteScalar();
+                        if (resultado != null)
+                        {
+                            id = Convert.ToInt32(resultado);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener ID del usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return id;
+
+        }
     }
-}
+}   
+
