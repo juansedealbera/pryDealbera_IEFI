@@ -209,6 +209,32 @@ namespace pryDealbera_IEFI
             }
         }
 
+        public void filtrarCargo(int cargo, DataGridView grilla)
+        {
+            /*try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT * FROM Auditoria WHERE CategoriaId = @categoriaId";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@categoriaId", cargo);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al buscar cargo: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+        }
+    
+
         //Metodos Para Auditar
         public void ListarSesiones(DataGridView grilla)
         {
@@ -310,5 +336,5 @@ namespace pryDealbera_IEFI
 
         }
     }
-}   
+} 
 

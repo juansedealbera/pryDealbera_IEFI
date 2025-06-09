@@ -32,7 +32,7 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscarLog = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
@@ -79,14 +79,14 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Buscar Login Por Usuario:";
             // 
-            // textBox1
+            // txtBuscarLog
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(429, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 25);
-            this.textBox1.TabIndex = 5;
+            this.txtBuscarLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarLog.Location = new System.Drawing.Point(429, 18);
+            this.txtBuscarLog.Multiline = true;
+            this.txtBuscarLog.Name = "txtBuscarLog";
+            this.txtBuscarLog.Size = new System.Drawing.Size(148, 25);
+            this.txtBuscarLog.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
@@ -106,6 +106,7 @@
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnVerTodos
             // 
@@ -118,6 +119,7 @@
             this.btnVerTodos.TabIndex = 8;
             this.btnVerTodos.Text = "Ver Todos";
             this.btnVerTodos.UseVisualStyleBackColor = true;
+            this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
             // frmAuditoria
             // 
@@ -128,7 +130,7 @@
             this.Controls.Add(this.btnVerTodos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscarLog);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvGrilla);
@@ -149,7 +151,7 @@
         private System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscarLog;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVerTodos;

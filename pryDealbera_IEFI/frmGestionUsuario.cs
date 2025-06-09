@@ -18,6 +18,7 @@ namespace pryDealbera_IEFI
         }
 
         clsConexionBD conexion = new clsConexionBD();
+        
         private int IdSeleccionado = 0;
 
         private void frmGestionUsuario_Load(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace pryDealbera_IEFI
 
             conexion.Agregar(nuevoUsuario);
             conexion.ListarBD(dgvGrilla);
+            
             limpiarCampos();
 
             btnModificar.Enabled = true;
@@ -138,6 +140,19 @@ namespace pryDealbera_IEFI
             }
         }
         
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (cmbFiltrarRol.SelectedValue != null)
+            {
+                int cargo = Convert.ToInt32(cmbFiltrarRol.SelectedValue);
+                conexion.filtrarCargo(cargo, dgvGrilla);
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccioná una categoría válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         public void limpiarCampos()
         {
             txtUsuario.Clear();
@@ -145,6 +160,5 @@ namespace pryDealbera_IEFI
             txtCorreo.Clear();
             txtNumero.Clear();
         }
-    
     }
 }

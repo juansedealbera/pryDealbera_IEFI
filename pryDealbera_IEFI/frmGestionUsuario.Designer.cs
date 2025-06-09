@@ -31,8 +31,8 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.btnEliminar1 = new System.Windows.Forms.Button();
@@ -44,13 +44,13 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbFiltrarRol = new System.Windows.Forms.ComboBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarNombre = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.cmbFiltrarRol = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,16 +97,6 @@
             this.cmbCargo.Size = new System.Drawing.Size(185, 21);
             this.cmbCargo.TabIndex = 13;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Cargo:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -116,6 +106,16 @@
             this.label4.Size = new System.Drawing.Size(153, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Número de Teléfono:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Cargo:";
             // 
             // label3
             // 
@@ -235,6 +235,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opción de Búsqueda";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(176, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Filtrar Rol:";
+            // 
+            // cmbFiltrarRol
+            // 
+            this.cmbFiltrarRol.FormattingEnabled = true;
+            this.cmbFiltrarRol.Location = new System.Drawing.Point(176, 47);
+            this.cmbFiltrarRol.Name = "cmbFiltrarRol";
+            this.cmbFiltrarRol.Size = new System.Drawing.Size(185, 21);
+            this.cmbFiltrarRol.TabIndex = 14;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(225, 74);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(94, 27);
+            this.btnFiltrar.TabIndex = 8;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
             // btnVerTodos
             // 
             this.btnVerTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,36 +309,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(164, 27);
             this.txtBuscar.TabIndex = 2;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
-            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(225, 74);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(94, 27);
-            this.btnFiltrar.TabIndex = 8;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            // 
-            // cmbFiltrarRol
-            // 
-            this.cmbFiltrarRol.FormattingEnabled = true;
-            this.cmbFiltrarRol.Location = new System.Drawing.Point(176, 47);
-            this.cmbFiltrarRol.Name = "cmbFiltrarRol";
-            this.cmbFiltrarRol.Size = new System.Drawing.Size(185, 21);
-            this.cmbFiltrarRol.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(176, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Filtrar Rol:";
             // 
             // frmGestionUsuario
             // 

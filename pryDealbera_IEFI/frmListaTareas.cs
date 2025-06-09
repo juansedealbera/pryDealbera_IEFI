@@ -16,5 +16,17 @@ namespace pryDealbera_IEFI
         {
             InitializeComponent();
         }
+
+        clsConexionBD conexion = new clsConexionBD();
+
+        private void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            conexion.ListarBD(dgvGrilla);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

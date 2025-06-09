@@ -61,8 +61,9 @@
             // 
             // txtContraseña
             // 
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(108, 200);
+            this.txtContraseña.Location = new System.Drawing.Point(108, 202);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(185, 27);
@@ -70,6 +71,7 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(108, 148);
             this.txtUsuario.Multiline = true;
@@ -103,12 +105,14 @@
             // 
             // btnVer
             // 
+            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Image = global::pryDealbera_IEFI.Properties.Resources.ojo;
-            this.btnVer.Location = new System.Drawing.Point(299, 200);
+            this.btnVer.Location = new System.Drawing.Point(257, 202);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(36, 27);
             this.btnVer.TabIndex = 12;
-            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.UseVisualStyleBackColor = false;
             // 
             // frmLogin
             // 
@@ -116,11 +120,11 @@
             this.ClientSize = new System.Drawing.Size(366, 288);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.txtContraseña);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

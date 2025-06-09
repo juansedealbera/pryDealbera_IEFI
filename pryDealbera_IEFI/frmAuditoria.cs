@@ -28,5 +28,25 @@ namespace pryDealbera_IEFI
         {
 
         }
+
+        private void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            conexion.ListarBD(dgvGrilla);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nombreBuscado = txtBuscarLog.Text.Trim();
+
+            if (string.IsNullOrEmpty(nombreBuscado))
+            {
+                MessageBox.Show("Por favor ingrese un nombre para realizar la búsqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            conexion.BuscarPorNombre(nombreBuscado, dgvGrilla);
+
+            txtBuscarLog.Text = " ";
+        }
     }
 }
