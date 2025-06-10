@@ -45,7 +45,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbFiltrarRol = new System.Windows.Forms.ComboBox();
+            this.cmbFiltrarCargo = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -222,7 +222,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cmbFiltrarRol);
+            this.groupBox2.Controls.Add(this.cmbFiltrarCargo);
             this.groupBox2.Controls.Add(this.btnFiltrar);
             this.groupBox2.Controls.Add(this.btnVerTodos);
             this.groupBox2.Controls.Add(this.label8);
@@ -241,17 +241,17 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(176, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.Size = new System.Drawing.Size(97, 16);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Filtrar Rol:";
+            this.label6.Text = "Filtrar Cargo:";
             // 
-            // cmbFiltrarRol
+            // cmbFiltrarCargo
             // 
-            this.cmbFiltrarRol.FormattingEnabled = true;
-            this.cmbFiltrarRol.Location = new System.Drawing.Point(176, 47);
-            this.cmbFiltrarRol.Name = "cmbFiltrarRol";
-            this.cmbFiltrarRol.Size = new System.Drawing.Size(185, 21);
-            this.cmbFiltrarRol.TabIndex = 14;
+            this.cmbFiltrarCargo.FormattingEnabled = true;
+            this.cmbFiltrarCargo.Location = new System.Drawing.Point(176, 47);
+            this.cmbFiltrarCargo.Name = "cmbFiltrarCargo";
+            this.cmbFiltrarCargo.Size = new System.Drawing.Size(185, 21);
+            this.cmbFiltrarCargo.TabIndex = 14;
             // 
             // btnFiltrar
             // 
@@ -356,6 +356,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbFiltrarRol;
+        private System.Windows.Forms.ComboBox cmbFiltrarCargo;
     }
 }

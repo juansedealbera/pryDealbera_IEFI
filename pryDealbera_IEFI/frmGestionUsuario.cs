@@ -26,6 +26,7 @@ namespace pryDealbera_IEFI
             conexion.ConectarBD();
             conexion.ListarBD(dgvGrilla);
             conexion.CargarCargos(cmbCargo);
+            conexion.CargarCargos(cmbFiltrarCargo);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -142,10 +143,10 @@ namespace pryDealbera_IEFI
         
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (cmbFiltrarRol.SelectedValue != null)
+            if (cmbFiltrarCargo.SelectedValue != null)
             {
-                int cargo = Convert.ToInt32(cmbFiltrarRol.SelectedValue);
-                conexion.filtrarCargo(cargo, dgvGrilla);
+                int cargo = Convert.ToInt32(cmbFiltrarCargo.SelectedValue);
+                conexion.filtrarCargo(cargo, dgvGrilla);  // <- este ahora usa Usuarios
             }
             else
             {

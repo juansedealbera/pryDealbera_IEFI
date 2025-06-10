@@ -33,7 +33,7 @@
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAdministración = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,7 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tareasToolStripMenuItem,
-            this.administraciónToolStripMenuItem,
+            this.tsmAdministración,
             this.salirToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
@@ -86,27 +86,27 @@
             this.historialTareasToolStripMenuItem.Text = "Historial Tareas";
             this.historialTareasToolStripMenuItem.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
             // 
-            // administraciónToolStripMenuItem
+            // tsmAdministración
             // 
-            this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAdministración.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
             this.auditoriaToolStripMenuItem});
-            this.administraciónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.trabajo_en_equipo;
-            this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(120, 24);
-            this.administraciónToolStripMenuItem.Text = "Administración";
+            this.tsmAdministración.Image = global::pryDealbera_IEFI.Properties.Resources.trabajo_en_equipo;
+            this.tsmAdministración.Name = "tsmAdministración";
+            this.tsmAdministración.Size = new System.Drawing.Size(120, 24);
+            this.tsmAdministración.Text = "Administración";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.auditoriaToolStripMenuItem.Text = "Auditoria";
             this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
@@ -191,7 +191,7 @@
 
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem tareasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmAdministración;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStripMenu;

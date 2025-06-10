@@ -191,7 +191,7 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "SELECT Id, Nombre AS Usuario, Correo, Telefono AS NumeroContacto FROM Usuarios WHERE Nombre LIKE @nombre";
+                    string query = "SELECT Id, Nombre AS Usuario, Correo, Telefono AS NumeroContacto, IdCargo FROM Usuarios WHERE Nombre LIKE @nombre";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
                     comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -211,15 +211,15 @@ namespace pryDealbera_IEFI
 
         public void filtrarCargo(int cargo, DataGridView grilla)
         {
-            /*try
+            try
             {
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string query = "SELECT * FROM Auditoria WHERE CategoriaId = @categoriaId";
+                    string query = "SELECT Id, IdCargo, Nombre AS Usuario, Correo, Telefono AS NumeroContacto FROM Usuarios WHERE IdCargo = @cargo ORDER BY Id ASC";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
-                    comando.Parameters.AddWithValue("@categoriaId", cargo);
+                    comando.Parameters.AddWithValue("@cargo", cargo);
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable tabla = new DataTable();
@@ -230,10 +230,10 @@ namespace pryDealbera_IEFI
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error al buscar cargo: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+                MessageBox.Show("Error al buscar usuarios por cargo: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-    
+
 
         //Metodos Para Auditar
         public void ListarSesiones(DataGridView grilla)

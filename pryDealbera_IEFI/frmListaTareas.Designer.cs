@@ -66,21 +66,21 @@
             // 
             // txtBuscarTarea
             // 
-            this.txtBuscarTarea.Location = new System.Drawing.Point(241, 28);
+            this.txtBuscarTarea.Location = new System.Drawing.Point(237, 28);
             this.txtBuscarTarea.Multiline = true;
             this.txtBuscarTarea.Name = "txtBuscarTarea";
-            this.txtBuscarTarea.Size = new System.Drawing.Size(184, 20);
+            this.txtBuscarTarea.Size = new System.Drawing.Size(188, 20);
             this.txtBuscarTarea.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 9);
+            this.label3.Location = new System.Drawing.Point(234, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 16);
+            this.label3.Size = new System.Drawing.Size(191, 16);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Buscar Login Por Usuario:";
+            this.label3.Text = "Buscar Tarea Por Usuario:";
             // 
             // label2
             // 
@@ -97,7 +97,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(431, 15);
+            this.btnBuscar.Location = new System.Drawing.Point(459, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(96, 33);
             this.btnBuscar.TabIndex = 11;
@@ -110,7 +110,7 @@
             this.btnVerTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
             this.btnVerTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerTodos.Location = new System.Drawing.Point(545, 15);
+            this.btnVerTodos.Location = new System.Drawing.Point(561, 15);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(106, 33);
             this.btnVerTodos.TabIndex = 12;

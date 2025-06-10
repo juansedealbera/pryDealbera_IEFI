@@ -54,10 +54,11 @@ namespace pryDealbera_IEFI
             // Control de acceso por cargo
             if (CargoUsuario == "Operario")
             {
-                administraciónToolStripMenuItem.Enabled = false;
+                tsmAdministración.Enabled = false;
             }
 
-            //permisos();
+            permisos();
+
         }
 
         //Opciones Menu
