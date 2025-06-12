@@ -75,14 +75,14 @@
             // registrarTareaToolStripMenuItem
             // 
             this.registrarTareaToolStripMenuItem.Name = "registrarTareaToolStripMenuItem";
-            this.registrarTareaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.registrarTareaToolStripMenuItem.Text = "RegistrarTarea";
+            this.registrarTareaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarTareaToolStripMenuItem.Text = "Registrar Tarea";
             this.registrarTareaToolStripMenuItem.Click += new System.EventHandler(this.registrarTareaToolStripMenuItem_Click);
             // 
             // historialTareasToolStripMenuItem
             // 
             this.historialTareasToolStripMenuItem.Name = "historialTareasToolStripMenuItem";
-            this.historialTareasToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.historialTareasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialTareasToolStripMenuItem.Text = "Historial Tareas";
             this.historialTareasToolStripMenuItem.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
             // 
@@ -123,7 +123,7 @@
             // 
             this.cerrarSesiónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.poder;
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             // 
             // statusStripMenu

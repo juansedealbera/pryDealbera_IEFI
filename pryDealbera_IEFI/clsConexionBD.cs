@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.MonthCalendar;
 
 namespace pryDealbera_IEFI
 {
@@ -335,6 +336,166 @@ namespace pryDealbera_IEFI
             return id;
 
         }
-    }
-} 
+  
+        //------------------TAREAS-----------------------------------------------------------------------------------------------------
+
+        //Agregar Tarea a la grilla
+        public void agregarTarea(clsRegistro registro)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "INSERT INTO Registros (Fecha, IdTarea, IdLugar, Insumo, Vacaciones, Estudio, Salario, Recibo, Comentario) " +
+                                      "VALUES (@Fecha, @IdTarea, @IdLugar, @Insumo, @Vacaciones, @Estudio, @Salario, @Recibo, @Comentario)";
+                   
+                    SqlCommand comando = new SqlCommand(consulta, conexion);
+                   
+                    comando.Parameters.AddWithValue("@Fecha", registro.Fecha);
+                    comando.Parameters.AddWithValue("@IdTarea", registro.IdTarea);
+                    comando.Parameters.AddWithValue("@IdLugar", registro.IdLugar);
+                    comando.Parameters.AddWithValue("@Insumo", registro.Insumo);
+                    comando.Parameters.AddWithValue("@Vacaciones", registro.Vacaciones);
+                    comando.Parameters.AddWithValue("@Estudio", registro.Estudio);
+                    comando.Parameters.AddWithValue("@Salario", registro.Salario);
+                    comando.Parameters.AddWithValue("@Recibo", registro.Recibo);
+                    comando.Parameters.AddWithValue("@Comentario", registro.Comentario);
+                    
+                    //opcion de meter algo en comentario
+                    
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar tarea: " + ex.Message);
+            }
+        }
+
+        public void ListarTareas(DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = "SELECT r.Id, r.Fecha, t.Nombre AS Tarea, l.Nombre AS Lugar, " +
+                                   "r.Insumo, r.Vacaciones, r.Estudio, r.Salario, r.Recibo, r.Comentario " +
+                                   "FROM Registros r " +
+                                   "INNER JOIN Tareas t ON r.TareaId = t.Id " +
+                                   "INNER JOIN Lugares l ON r.LugarId = l.Id " +
+                                   "ORDER BY r.Fecha DESC;";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al listar los registros: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Agrega las tareas a la grilla
+        public DataTable obtenerTareas()
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = @"
+                SELECT 
+                    r.Fecha, 
+                    t.Nombre AS Tarea, 
+                    l.Nombre AS Lugar, 
+                    r.Insumo, 
+                    r.Vacaciones, 
+                    r.Estudio, 
+                    r.Salario, 
+                    r.Recibo, 
+                    r.Comentario
+                FROM Registros r
+                INNER JOIN Tareas t ON r.IdTarea = t.Id
+                INNER JOIN Lugares l ON r.IdLugar = l.Id";
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    adaptador.Fill(tabla);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener las tareas: " + ex.Message);
+            }
+
+            return tabla;
+        }
+
+        public void cargarTareas(ComboBox Combo)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT Id, Nombre FROM Tareas";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    Combo.DataSource = tabla;
+                    Combo.DisplayMember = "Nombre";
+                    Combo.ValueMember = "Id";
+                    Combo.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al cargar categorías: " + error.Message);
+            }
+
+        }
+        public void cargarLugares(ComboBox Combo)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string query = "SELECT Id, Nombre FROM Lugares";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    Combo.DataSource = tabla;
+                    Combo.DisplayMember = "Nombre";
+                    Combo.ValueMember = "Id";
+                    Combo.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al cargar categorías: " + error.Message);
+            }
+
+        }
+    }       
+ }
+
 

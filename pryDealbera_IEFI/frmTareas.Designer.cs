@@ -47,8 +47,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtComentario = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,12 +192,6 @@
             // cmbTareas
             // 
             this.cmbTareas.FormattingEnabled = true;
-            this.cmbTareas.Items.AddRange(new object[] {
-            "Auditoría",
-            "Consultas",
-            "Inspección",
-            "Reclamos",
-            "Visita"});
             this.cmbTareas.Location = new System.Drawing.Point(58, 76);
             this.cmbTareas.Name = "cmbTareas";
             this.cmbTareas.Size = new System.Drawing.Size(149, 21);
@@ -206,10 +200,6 @@
             // cmbLugares
             // 
             this.cmbLugares.FormattingEnabled = true;
-            this.cmbLugares.Items.AddRange(new object[] {
-            "Empresa",
-            "Servicio",
-            "Oficina"});
             this.cmbLugares.Location = new System.Drawing.Point(58, 119);
             this.cmbLugares.Name = "cmbLugares";
             this.cmbLugares.Size = new System.Drawing.Size(149, 21);
@@ -224,6 +214,7 @@
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label9
             // 
@@ -266,6 +257,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "3 - Comentario (Opcional)";
             // 
+            // txtComentario
+            // 
+            this.txtComentario.Location = new System.Drawing.Point(6, 25);
+            this.txtComentario.Multiline = true;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(270, 145);
+            this.txtComentario.TabIndex = 24;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,14 +274,7 @@
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // txtComentario
-            // 
-            this.txtComentario.Location = new System.Drawing.Point(6, 25);
-            this.txtComentario.Multiline = true;
-            this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(270, 145);
-            this.txtComentario.TabIndex = 24;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmTareas
             // 
@@ -297,6 +289,7 @@
             this.Name = "frmTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";
+            this.Load += new System.EventHandler(this.frmTareas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
