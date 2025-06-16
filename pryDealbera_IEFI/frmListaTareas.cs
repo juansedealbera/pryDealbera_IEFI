@@ -27,22 +27,26 @@ namespace pryDealbera_IEFI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string TareaBuscada = txtBuscarTarea.Text.Trim();
+            string tareaBuscada = txtBuscarTarea.Text.Trim();
 
-            if (string.IsNullOrEmpty(TareaBuscada))
+            if (string.IsNullOrEmpty(tareaBuscada))
             {
-                MessageBox.Show("Por favor ingrese una tarea para realizar la búsqueda.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor ingrese un nombre para buscar.");
                 return;
             }
 
-            conexion.BuscarPorTarea(TareaBuscada, dgvGrilla);
-
-            txtBuscarTarea.Text = " ";
+            conexion.BuscarPorTarea(tareaBuscada, dgvGrilla);
+            txtBuscarTarea.Clear(); // Limpia el campo luego de buscar
         }
 
         private void frmListaTareas_Load(object sender, EventArgs e)
         {
             conexion.ListarTareas(dgvGrilla);
+        }
+
+        private void txtBuscarTarea_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -71,6 +71,7 @@
             this.txtBuscarTarea.Name = "txtBuscarTarea";
             this.txtBuscarTarea.Size = new System.Drawing.Size(188, 20);
             this.txtBuscarTarea.TabIndex = 9;
+            this.txtBuscarTarea.TextChanged += new System.EventHandler(this.txtBuscarTarea_TextChanged);
             // 
             // label3
             // 
@@ -78,9 +79,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(234, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 16);
+            this.label3.Size = new System.Drawing.Size(105, 16);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Buscar Tarea Por Usuario:";
+            this.label3.Text = "Buscar Tarea:";
             // 
             // label2
             // 

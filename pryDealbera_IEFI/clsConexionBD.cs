@@ -507,9 +507,9 @@ namespace pryDealbera_IEFI
                     string query = "SELECT r.Id, r.Fecha, t.Nombre AS Tarea, l.Nombre AS Lugar, " +
                                    "r.Insumo, r.Vacaciones, r.Estudio, r.Salario, r.Recibo, r.Comentario " +
                                    "FROM Registros r " +
-                                   "INNER JOIN Tareas t ON r.IdTarea = t.Id " +
-                                   "INNER JOIN Lugares l ON r.IdLugar = l.Id " +
-                                   "WHERE t.Nombre LIKE @NombreTarea " +
+                                   "INNER JOIN Tareas t ON r.IdTarea = t.Id " +   // Relaciona con tabla Tareas
+                                   "INNER JOIN Lugares l ON r.IdLugar = l.Id " + // Relaciona con tabla Lugares
+                                   "WHERE t.Nombre LIKE @NombreTarea " +         // Filtro por nombre
                                    "ORDER BY r.Fecha DESC;";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
