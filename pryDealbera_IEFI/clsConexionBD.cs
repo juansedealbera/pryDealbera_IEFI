@@ -384,8 +384,8 @@ namespace pryDealbera_IEFI
                     string query = "SELECT r.Id, r.Fecha, t.Nombre AS Tarea, l.Nombre AS Lugar, " +
                                    "r.Insumo, r.Vacaciones, r.Estudio, r.Salario, r.Recibo, r.Comentario " +
                                    "FROM Registros r " +
-                                   "INNER JOIN Tareas t ON r.TareaId = t.Id " +
-                                   "INNER JOIN Lugares l ON r.LugarId = l.Id " +
+                                   "INNER JOIN Tareas t ON r.IdTarea = t.Id " +
+                                   "INNER JOIN Lugares l ON r.IdLugar = l.Id " +
                                    "ORDER BY r.Fecha DESC;";
 
                     SqlCommand comando = new SqlCommand(query, conexion);
@@ -495,6 +495,38 @@ namespace pryDealbera_IEFI
             }
 
         }
+
+        public void BuscarPorTarea(string nombreTarea, DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = "SELECT r.Id, r.Fecha, t.Nombre AS Tarea, l.Nombre AS Lugar, " +
+                                   "r.Insumo, r.Vacaciones, r.Estudio, r.Salario, r.Recibo, r.Comentario " +
+                                   "FROM Registros r " +
+                                   "INNER JOIN Tareas t ON r.IdTarea = t.Id " +
+                                   "INNER JOIN Lugares l ON r.IdLugar = l.Id " +
+                                   "WHERE t.Nombre LIKE @NombreTarea " +
+                                   "ORDER BY r.Fecha DESC;";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@NombreTarea", "%" + nombreTarea + "%");
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar por tarea: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }       
  }
 

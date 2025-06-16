@@ -135,6 +135,7 @@
             this.Name = "frmListaTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Tareas";
+            this.Load += new System.EventHandler(this.frmListaTareas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

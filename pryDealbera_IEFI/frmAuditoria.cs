@@ -36,7 +36,7 @@ namespace pryDealbera_IEFI
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string nombreBuscado = txtBuscarLog.Text.Trim();
+           string nombreBuscado = txtBuscarLog.Text.Trim();
 
             if (string.IsNullOrEmpty(nombreBuscado))
             {
