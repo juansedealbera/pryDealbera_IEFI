@@ -15,6 +15,7 @@ namespace pryDealbera_IEFI
         public frmAuditoria()
         {
             InitializeComponent();
+            this.dtpFecha.ValueChanged += new EventHandler(this.dtpFecha_ValueChanged);
         }
 
         clsConexionBD conexion = new clsConexionBD();
@@ -22,16 +23,13 @@ namespace pryDealbera_IEFI
         {
             conexion.ConectarBD();
             conexion.ListarSesiones(dgvGrilla);
-        }
-
-        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            dtpFecha.MaxDate = DateTime.Today;
         }
 
         private void btnVerTodos_Click(object sender, EventArgs e)
         {
-            conexion.ListarBD(dgvGrilla);
+            //conexion.ListarBD(dgvGrilla);
+            conexion.ListarSesiones(dgvGrilla);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -46,7 +44,17 @@ namespace pryDealbera_IEFI
 
             conexion.BuscarPorNombre(nombreBuscado, dgvGrilla);
 
-            txtBuscarLog.Text = " ";
+            txtBuscarLog.Clear();
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            conexion.BuscarSesionesPorFechaExacta(dtpFecha.Value, dgvGrilla);
+        }
+
+        private void txtBuscarLog_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

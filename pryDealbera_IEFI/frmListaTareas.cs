@@ -15,6 +15,7 @@ namespace pryDealbera_IEFI
         public frmListaTareas()
         {
             InitializeComponent();
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
         }
 
         clsConexionBD conexion = new clsConexionBD();
@@ -44,9 +45,9 @@ namespace pryDealbera_IEFI
             conexion.ListarTareas(dgvGrilla);
         }
 
-        private void txtBuscarTarea_TextChanged(object sender, EventArgs e)
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
-
+            conexion.BuscarPorFecha(dtpFecha.Value, dgvGrilla);
         }
     }
 }

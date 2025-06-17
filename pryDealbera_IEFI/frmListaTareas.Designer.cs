@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtBuscarTarea = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,12 +57,13 @@
             this.dgvGrilla.Size = new System.Drawing.Size(776, 313);
             this.dgvGrilla.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtpFecha.Location = new System.Drawing.Point(16, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(210, 20);
+            this.dtpFecha.TabIndex = 10;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // txtBuscarTarea
             // 
@@ -71,7 +72,6 @@
             this.txtBuscarTarea.Name = "txtBuscarTarea";
             this.txtBuscarTarea.Size = new System.Drawing.Size(188, 20);
             this.txtBuscarTarea.TabIndex = 9;
-            this.txtBuscarTarea.TextChanged += new System.EventHandler(this.txtBuscarTarea_TextChanged);
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             this.ClientSize = new System.Drawing.Size(800, 421);
             this.Controls.Add(this.btnVerTodos);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtBuscarTarea);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -147,7 +147,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvGrilla;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TextBox txtBuscarTarea;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

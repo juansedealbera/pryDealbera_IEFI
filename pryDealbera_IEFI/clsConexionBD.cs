@@ -274,6 +274,47 @@ namespace pryDealbera_IEFI
             }
         }
 
+        public void BuscarSesionesPorFecha(DateTime fecha, DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = @"
+                SELECT 
+                    u.Nombre AS Usuario,
+                    s.Fecha,
+                    s.HoraInicio,
+                    s.HoraFin,
+                    s.TiempoTranscurrido
+                FROM 
+                    Sesiones s
+                INNER JOIN 
+                    Usuarios u ON s.IdUsuario = u.Id
+                WHERE 
+                    CAST(s.Fecha AS DATE) = @Fecha
+                ORDER BY 
+                    s.Fecha DESC, s.HoraInicio DESC";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@Fecha", fecha.Date);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar por fecha: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public void GuardarSesion(clsAuditoriaSesiones sesion)
         {
             try
@@ -527,7 +568,78 @@ namespace pryDealbera_IEFI
             }
         }
 
-    }       
- }
+        public void BuscarPorFecha(DateTime fecha, DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = "SELECT r.Id, r.Fecha, t.Nombre AS Tarea, l.Nombre AS Lugar, " +
+                                   "r.Insumo, r.Vacaciones, r.Estudio, r.Salario, r.Recibo, r.Comentario " +
+                                   "FROM Registros r " +
+                                   "INNER JOIN Tareas t ON r.IdTarea = t.Id " +
+                                   "INNER JOIN Lugares l ON r.IdLugar = l.Id " +
+                                   "WHERE CAST(r.Fecha AS DATE) = @Fecha " +  // Comparar solo la fecha sin hora
+                                   "ORDER BY r.Fecha DESC;";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@Fecha", fecha.Date); // Asegura que solo compare la fecha
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar por fecha: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void BuscarSesionesPorFechaExacta(DateTime fecha, DataGridView grilla)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    string query = @"
+                SELECT 
+                    u.Nombre AS Usuario,
+                    s.Fecha,
+                    s.HoraInicio,
+                    s.HoraFin,
+                    s.TiempoTranscurrido
+                FROM 
+                    Sesiones s
+                INNER JOIN 
+                    Usuarios u ON s.IdUsuario = u.Id
+                WHERE 
+                    CAST(s.Fecha AS DATE) = @Fecha
+                ORDER BY 
+                    s.Fecha DESC, s.HoraInicio DESC";
+
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.AddWithValue("@Fecha", fecha.Date);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    grilla.DataSource = tabla;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar por fecha: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+    }
+}
 
 

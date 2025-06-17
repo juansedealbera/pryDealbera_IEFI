@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscarLog = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -57,7 +57,6 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(743, 302);
             this.dgvGrilla.TabIndex = 1;
-            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             // 
             // label2
             // 
@@ -87,13 +86,15 @@
             this.txtBuscarLog.Name = "txtBuscarLog";
             this.txtBuscarLog.Size = new System.Drawing.Size(148, 25);
             this.txtBuscarLog.TabIndex = 5;
+            this.txtBuscarLog.TextChanged += new System.EventHandler(this.txtBuscarLog_TextChanged);
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 40);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtpFecha.Location = new System.Drawing.Point(12, 40);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(210, 20);
+            this.dtpFecha.TabIndex = 6;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // btnBuscar
             // 
@@ -129,7 +130,7 @@
             this.ClientSize = new System.Drawing.Size(767, 427);
             this.Controls.Add(this.btnVerTodos);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtBuscarLog);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -152,7 +153,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBuscarLog;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVerTodos;
     }
