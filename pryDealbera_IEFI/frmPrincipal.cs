@@ -23,7 +23,7 @@ namespace pryDealbera_IEFI
         // Tiempo en que se inició sesión
         private DateTime tiempoInicio;
         public string UsuarioActivo { get; set; }
-        public string CargoUsuario { get; set; }
+        private clsUsuario usuarioLog;
 
         private string nombreUsuario;
         private int cargoUsuario;
@@ -44,20 +44,16 @@ namespace pryDealbera_IEFI
             // Guardamos el momento en que se inició la sesión
             tiempoInicio = DateTime.Now;
 
-            // Mostrar el nombre del usuario (debe haberse asignado antes de abrir este formulario)
             lblUser.Text = $"Usuario: {UsuarioActivo}";
 
-            // Iniciar el Timer
             timer.Interval = 1000; // 1 segundo
             timer.Start();
 
-            // Control de acceso por cargo
-            if (CargoUsuario == "Operario")
+            if(usuarioLog.cargo == 2)
             {
-                tsmAdministración.Enabled = false;
+                mnuUsuarios.Visible = false;
+                mnuAuditoria.Visible = false;
             }
-
-            permisos();
 
         }
 
@@ -89,15 +85,13 @@ namespace pryDealbera_IEFI
         //control tiempo
         private void timer_Tick_1(object sender, EventArgs e)
         {
-            // Mostrar fecha y hora actual
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
-            // Calcular tiempo de sesión
+            //Calcular tiempo de sesión
             TimeSpan tiempoSesion = DateTime.Now - tiempoInicio;
             lblTiempo.Text = $"Tiempo activo: {tiempoSesion:hh\\:mm\\:ss}";
         }
 
-        //cerrar
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             nombreUsuario = UsuarioActivo;
@@ -107,7 +101,7 @@ namespace pryDealbera_IEFI
             horaFin = DateTime.Now;
             tiempoTranscurrido = horaFin - horaInicio;
 
-            int idUsuario = conexionBD.ObtenerIdUsuario(nombreUsuario); // nombreUsuario ya debería estar asignado
+            int idUsuario = conexionBD.ObtenerIdUsuario(nombreUsuario);
 
             clsAuditoriaSesiones sesion = new clsAuditoriaSesiones(
                 0,
@@ -119,16 +113,6 @@ namespace pryDealbera_IEFI
             );
 
             conexionBD.GuardarSesion(sesion);
-        }
-    
-        //Opcion para restringir permisos
-        public void permisos()
-        {
-            if (cargoUsuario == 2)
-            {
-                auditoriaToolStripMenuItem.Visible = false;
-                usuariosToolStripMenuItem.Visible = false;
-            }
         }
     
     }

@@ -25,7 +25,7 @@ namespace pryDealbera_IEFI
 
         private void btnEntrar_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
+            string connectionString = "Server=PC50;Database=Auditoria;Trusted_Connection=True;";
             string usuario = txtUsuario.Text.Trim();
             string contraseña = txtContraseña.Text;
 

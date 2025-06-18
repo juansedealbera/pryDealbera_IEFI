@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTarea = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHistorial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAdministración = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAuditoria = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMenu = new System.Windows.Forms.StatusStrip();
@@ -64,51 +64,51 @@
             // tareasToolStripMenuItem
             // 
             this.tareasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarTareaToolStripMenuItem,
-            this.historialTareasToolStripMenuItem});
+            this.mnuTarea,
+            this.mnuHistorial});
             this.tareasToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.documento;
             this.tareasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
             this.tareasToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.tareasToolStripMenuItem.Text = "Tareas";
             // 
-            // registrarTareaToolStripMenuItem
+            // mnuTarea
             // 
-            this.registrarTareaToolStripMenuItem.Name = "registrarTareaToolStripMenuItem";
-            this.registrarTareaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarTareaToolStripMenuItem.Text = "Registrar Tarea";
-            this.registrarTareaToolStripMenuItem.Click += new System.EventHandler(this.registrarTareaToolStripMenuItem_Click);
+            this.mnuTarea.Name = "mnuTarea";
+            this.mnuTarea.Size = new System.Drawing.Size(180, 22);
+            this.mnuTarea.Text = "Registrar Tarea";
+            this.mnuTarea.Click += new System.EventHandler(this.registrarTareaToolStripMenuItem_Click);
             // 
-            // historialTareasToolStripMenuItem
+            // mnuHistorial
             // 
-            this.historialTareasToolStripMenuItem.Name = "historialTareasToolStripMenuItem";
-            this.historialTareasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.historialTareasToolStripMenuItem.Text = "Historial Tareas";
-            this.historialTareasToolStripMenuItem.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
+            this.mnuHistorial.Name = "mnuHistorial";
+            this.mnuHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuHistorial.Text = "Historial Tareas";
+            this.mnuHistorial.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
             // 
             // tsmAdministración
             // 
             this.tsmAdministración.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
-            this.auditoriaToolStripMenuItem});
+            this.mnuUsuarios,
+            this.mnuAuditoria});
             this.tsmAdministración.Image = global::pryDealbera_IEFI.Properties.Resources.trabajo_en_equipo;
             this.tsmAdministración.Name = "tsmAdministración";
             this.tsmAdministración.Size = new System.Drawing.Size(120, 24);
             this.tsmAdministración.Text = "Administración";
             // 
-            // usuariosToolStripMenuItem
+            // mnuUsuarios
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.mnuUsuarios.Name = "mnuUsuarios";
+            this.mnuUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.mnuUsuarios.Text = "Usuarios";
+            this.mnuUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // auditoriaToolStripMenuItem
+            // mnuAuditoria
             // 
-            this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.auditoriaToolStripMenuItem.Text = "Auditoria";
-            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
+            this.mnuAuditoria.Name = "mnuAuditoria";
+            this.mnuAuditoria.Size = new System.Drawing.Size(180, 22);
+            this.mnuAuditoria.Text = "Auditoria";
+            this.mnuAuditoria.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -123,7 +123,7 @@
             // 
             this.cerrarSesiónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.poder;
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             // 
             // statusStripMenu
@@ -192,8 +192,8 @@
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem tareasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmAdministración;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem mnuAuditoria;
         private System.Windows.Forms.StatusStrip statusStripMenu;
         private System.Windows.Forms.ToolStripStatusLabel lblUser;
         private System.Windows.Forms.ToolStripStatusLabel lblFecha;
@@ -201,8 +201,8 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarTareaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialTareasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuTarea;
+        private System.Windows.Forms.ToolStripMenuItem mnuHistorial;
     }
 }
 

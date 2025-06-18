@@ -248,7 +248,7 @@
             // cmbFiltrarCargo
             // 
             this.cmbFiltrarCargo.FormattingEnabled = true;
-            this.cmbFiltrarCargo.Location = new System.Drawing.Point(176, 47);
+            this.cmbFiltrarCargo.Location = new System.Drawing.Point(176, 44);
             this.cmbFiltrarCargo.Name = "cmbFiltrarCargo";
             this.cmbFiltrarCargo.Size = new System.Drawing.Size(185, 21);
             this.cmbFiltrarCargo.TabIndex = 14;
@@ -258,7 +258,7 @@
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
             this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(225, 74);
+            this.btnFiltrar.Location = new System.Drawing.Point(267, 74);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(94, 27);
             this.btnFiltrar.TabIndex = 8;
@@ -271,7 +271,7 @@
             this.btnVerTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodos.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
             this.btnVerTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerTodos.Location = new System.Drawing.Point(394, 44);
+            this.btnVerTodos.Location = new System.Drawing.Point(418, 74);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(120, 27);
             this.btnVerTodos.TabIndex = 7;
@@ -294,7 +294,7 @@
             this.btnBuscarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarNombre.Image = global::pryDealbera_IEFI.Properties.Resources.lupa;
             this.btnBuscarNombre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarNombre.Location = new System.Drawing.Point(37, 74);
+            this.btnBuscarNombre.Location = new System.Drawing.Point(72, 74);
             this.btnBuscarNombre.Name = "btnBuscarNombre";
             this.btnBuscarNombre.Size = new System.Drawing.Size(98, 27);
             this.btnBuscarNombre.TabIndex = 2;
@@ -307,7 +307,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(6, 44);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(164, 27);
+            this.txtBuscar.Size = new System.Drawing.Size(164, 21);
             this.txtBuscar.TabIndex = 2;
             // 
             // frmGestionUsuario
