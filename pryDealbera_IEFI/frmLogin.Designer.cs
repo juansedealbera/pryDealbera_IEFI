@@ -95,7 +95,7 @@
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.Image = global::pryDealbera_IEFI.Properties.Resources.enter_icon_icons_com_71207;
             this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrar.Location = new System.Drawing.Point(125, 237);
+            this.btnEntrar.Location = new System.Drawing.Point(125, 250);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(136, 39);
             this.btnEntrar.TabIndex = 13;
@@ -113,11 +113,12 @@
             this.btnVer.Size = new System.Drawing.Size(36, 27);
             this.btnVer.TabIndex = 12;
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // frmLogin
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(366, 288);
+            this.ClientSize = new System.Drawing.Size(366, 301);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label2);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,11 +22,12 @@ namespace pryDealbera_IEFI
         private void frmLogin_Load_1(object sender, EventArgs e)
         {
             txtContraseña.PasswordChar = '●';
+            //btnVer.Image = Properties.Resources.imgOjoCerrado;
         }
 
         private void btnEntrar_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=PC50;Database=Auditoria;Trusted_Connection=True;";
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=Auditoria;Trusted_Connection=True;";
             string usuario = txtUsuario.Text.Trim();
             string contraseña = txtContraseña.Text;
 
@@ -42,20 +44,42 @@ namespace pryDealbera_IEFI
                 using (SqlConnection conexion = new SqlConnection(connectionString))
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
-                    comando.Parameters.Add("@Usuario", System.Data.SqlDbType.VarChar, 50).Value = usuario;
-                    comando.Parameters.Add("@Contraseña", System.Data.SqlDbType.VarChar, 50).Value = contraseña;
+                    comando.Parameters.Add("@Usuario", SqlDbType.VarChar, 50).Value = usuario;
+                    comando.Parameters.Add("@Contraseña", SqlDbType.VarChar, 50).Value = contraseña;
 
                     conexion.Open();
                     int coincidencias = (int)comando.ExecuteScalar();
 
                     if (coincidencias > 0)
                     {
-                        MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Consultamos el IdCargo
+                        string queryCargo = "SELECT IdCargo FROM Usuarios WHERE Nombre = @Usuario AND Contraseña = @Contraseña";
+                        using (SqlCommand cmdCargo = new SqlCommand(queryCargo, conexion))
+                        {
+                            cmdCargo.Parameters.Add("@Usuario", SqlDbType.VarChar, 50).Value = usuario;
+                            cmdCargo.Parameters.Add("@Contraseña", SqlDbType.VarChar, 50).Value = contraseña;
 
-                        frmPrincipal principal = new frmPrincipal();
-                        principal.UsuarioActivo = usuario; // Se pasa el nombre de usuario
-                        principal.Show();
-                        this.Hide();
+                            object result = cmdCargo.ExecuteScalar();
+
+                            if (result != null)
+                            {
+                                int idCargo = Convert.ToInt32(result);
+
+                                MessageBox.Show("Inicio de sesión exitoso.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Creamos y mostramos el formulario principal
+                                frmPrincipal principal = new frmPrincipal();
+                                principal.UsuarioActivo = usuario;
+                                principal.cargoUsuario = idCargo;
+                                principal.Show();
+
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo obtener el cargo del usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
                     else
                     {
@@ -72,6 +96,19 @@ namespace pryDealbera_IEFI
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.PasswordChar == '●')
+            {
+                txtContraseña.PasswordChar = '\0';
+                btnVer.Image = Properties.Resources.;
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '●';
+                btnVer.Image = Properties.Resources.imgOjoCerrado;
+            }
+        }
     }
 }
-

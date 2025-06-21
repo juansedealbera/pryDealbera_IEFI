@@ -23,10 +23,11 @@ namespace pryDealbera_IEFI
         // Tiempo en que se inició sesión
         private DateTime tiempoInicio;
         public string UsuarioActivo { get; set; }
+
         private clsUsuario usuarioLog;
 
         private string nombreUsuario;
-        private int cargoUsuario;
+        public int cargoUsuario { get; set; }
         private DateTime Fecha;
         private DateTime horaInicio;
         private DateTime horaFin;
@@ -49,7 +50,7 @@ namespace pryDealbera_IEFI
             timer.Interval = 1000; // 1 segundo
             timer.Start();
 
-            if(usuarioLog.cargo == 2)
+            if (cargoUsuario == 2)
             {
                 mnuUsuarios.Visible = false;
                 mnuAuditoria.Visible = false;

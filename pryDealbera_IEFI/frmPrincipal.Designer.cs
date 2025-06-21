@@ -36,8 +36,6 @@
             this.tsmAdministración = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAuditoria = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMenu = new System.Windows.Forms.StatusStrip();
             this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblFecha = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,8 +50,7 @@
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tareasToolStripMenuItem,
-            this.tsmAdministración,
-            this.salirToolStripMenuItem});
+            this.tsmAdministración});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -99,32 +96,16 @@
             // mnuUsuarios
             // 
             this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.mnuUsuarios.Size = new System.Drawing.Size(123, 22);
             this.mnuUsuarios.Text = "Usuarios";
             this.mnuUsuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // mnuAuditoria
             // 
             this.mnuAuditoria.Name = "mnuAuditoria";
-            this.mnuAuditoria.Size = new System.Drawing.Size(180, 22);
+            this.mnuAuditoria.Size = new System.Drawing.Size(123, 22);
             this.mnuAuditoria.Text = "Auditoria";
             this.mnuAuditoria.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSesiónToolStripMenuItem});
-            this.salirToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.cerrar_sesion;
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Image = global::pryDealbera_IEFI.Properties.Resources.poder;
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             // 
             // statusStripMenu
             // 
@@ -199,8 +180,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblFecha;
         private System.Windows.Forms.ToolStripStatusLabel lblTiempo;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuTarea;
         private System.Windows.Forms.ToolStripMenuItem mnuHistorial;
     }
