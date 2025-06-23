@@ -35,7 +35,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEntrar = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
+            this.chkContraseña = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.Image = global::pryDealbera_IEFI.Properties.Resources.enter_icon_icons_com_71207;
             this.btnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrar.Location = new System.Drawing.Point(125, 250);
+            this.btnEntrar.Location = new System.Drawing.Point(125, 271);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(136, 39);
             this.btnEntrar.TabIndex = 13;
@@ -103,28 +103,27 @@
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
             // 
-            // btnVer
+            // chkContraseña
             // 
-            this.btnVer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Image = global::pryDealbera_IEFI.Properties.Resources.ojo;
-            this.btnVer.Location = new System.Drawing.Point(257, 202);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(36, 27);
-            this.btnVer.TabIndex = 12;
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            this.chkContraseña.AutoSize = true;
+            this.chkContraseña.Location = new System.Drawing.Point(194, 235);
+            this.chkContraseña.Name = "chkContraseña";
+            this.chkContraseña.Size = new System.Drawing.Size(99, 17);
+            this.chkContraseña.TabIndex = 15;
+            this.chkContraseña.Text = "Ver Contraseña";
+            this.chkContraseña.UseVisualStyleBackColor = true;
+            this.chkContraseña.CheckedChanged += new System.EventHandler(this.chkContraseña_CheckedChanged);
             // 
             // frmLogin
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(366, 301);
+            this.ClientSize = new System.Drawing.Size(366, 322);
+            this.Controls.Add(this.chkContraseña);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.txtContraseña);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
@@ -140,10 +139,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.PictureBox pictureBox1;
-
+        private System.Windows.Forms.CheckBox chkContraseña;
     }
     #endregion
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTareas));
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkRecibo = new System.Windows.Forms.CheckBox();
@@ -58,7 +59,7 @@
             // dgvGrilla
             // 
             this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Location = new System.Drawing.Point(12, 206);
+            this.dgvGrilla.Location = new System.Drawing.Point(12, 213);
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.Size = new System.Drawing.Size(918, 205);
             this.dgvGrilla.TabIndex = 5;
@@ -252,7 +253,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(517, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 177);
+            this.groupBox3.Size = new System.Drawing.Size(413, 177);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "3 - Comentario (Opcional)";
@@ -281,11 +282,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(942, 421);
+            this.ClientSize = new System.Drawing.Size(949, 428);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvGrilla);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTareas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tareas";

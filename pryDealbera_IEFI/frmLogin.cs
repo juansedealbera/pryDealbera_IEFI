@@ -97,17 +97,19 @@ namespace pryDealbera_IEFI
             }
         }
 
-        private void btnVer_Click(object sender, EventArgs e)
+        private void chkContraseña_CheckedChanged(object sender, EventArgs e)
         {
-            if (txtContraseña.PasswordChar == '●')
+            if (chkContraseña.Checked)
             {
+                // Mostrar contraseña
                 txtContraseña.PasswordChar = '\0';
-                btnVer.Image = Properties.Resources.;
+                chkContraseña.Text = "Ocultar Contraseña";
             }
             else
             {
+                // Ocultar contraseña
                 txtContraseña.PasswordChar = '●';
-                btnVer.Image = Properties.Resources.imgOjoCerrado;
+                chkContraseña.Text = "Ver Contraseña";
             }
         }
     }

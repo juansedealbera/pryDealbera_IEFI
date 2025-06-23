@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTarea = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,14 +73,14 @@
             // mnuTarea
             // 
             this.mnuTarea.Name = "mnuTarea";
-            this.mnuTarea.Size = new System.Drawing.Size(180, 22);
+            this.mnuTarea.Size = new System.Drawing.Size(153, 22);
             this.mnuTarea.Text = "Registrar Tarea";
             this.mnuTarea.Click += new System.EventHandler(this.registrarTareaToolStripMenuItem_Click);
             // 
             // mnuHistorial
             // 
             this.mnuHistorial.Name = "mnuHistorial";
-            this.mnuHistorial.Size = new System.Drawing.Size(180, 22);
+            this.mnuHistorial.Size = new System.Drawing.Size(153, 22);
             this.mnuHistorial.Text = "Historial Tareas";
             this.mnuHistorial.Click += new System.EventHandler(this.historialTareasToolStripMenuItem_Click);
             // 
@@ -153,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(536, 363);
             this.Controls.Add(this.statusStripMenu);
             this.Controls.Add(this.menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
